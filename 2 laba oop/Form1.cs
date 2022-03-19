@@ -281,9 +281,9 @@ namespace _2_laba_oop
                 MessageBox.Show("Your payment was successful");
                 button7.Enabled = false;
                 label13.Text = Convert.ToString(clone.Card.MoneyCount);
-                clone._Voucher.Country = info.ToCountry;
-                clone._Voucher.Day = info.Day;
-                clone._Voucher.Duration = info.Duration;
+                clone.Voucher.Country = info.ToCountry;
+                clone.Voucher.Day = info.Day;
+                clone.Voucher.Duration = info.Duration;
                 tourists.Add(clone);
                 textBox1.Clear();
                 textBox2.Clear();

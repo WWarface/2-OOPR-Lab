@@ -14,9 +14,9 @@ namespace _2_laba_oop
             {
                 form.richTextBox1.AppendText("Name: "+item.Name+"\n");
                 form.richTextBox1.AppendText("Surname: " + item.Surname + "\n");
-                form.richTextBox1.AppendText("Voucher country: " + item._Voucher.Country + "\n");
-                form.richTextBox1.AppendText("Voucher Day: " + item._Voucher.Day + " Voucher Month: " + item._Voucher.Month + "\n");
-                form.richTextBox1.AppendText("Voucher Duration: " + item._Voucher.Duration + "\n\n");
+                form.richTextBox1.AppendText("Voucher country: " + item.Voucher.Country + "\n");
+                form.richTextBox1.AppendText("Voucher Day: " + item.Voucher.Day + " Voucher Month: " + item.Voucher.Month + "\n");
+                form.richTextBox1.AppendText("Voucher Duration: " + item.Voucher.Duration + "\n\n");
             }
         }
     }

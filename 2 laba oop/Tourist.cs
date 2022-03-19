@@ -9,25 +9,24 @@ namespace _2_laba_oop
 {
     public sealed class Tourist: Human
     {
-        public static int Count { get; set; }
-        private static int k = 0;
-        public Voucher _Voucher { get; set; }
-        public CreditCard Card { get; set; }
-        public static string Path { get; set; }
-        public Tourist(string name, string surname,int age):base(name,surname,age)
+        public Tourist() : base("Clone", "Clone", 0)
+        {
+            Card = new CreditCard("0000 0000 0000 0000", 000, 0);
+            Voucher = new Voucher();
+            Count++;
+        }
+
+        public Tourist(string name, string surname, int age) : base(name, surname, age)
         {
             Card = new CreditCard("4444 4444 4444 4444", 314, 30000);
             Count++;
         }
+        public static int Count { get; set; }
 
-        public Tourist():base("Clone","Clone",0)
-        {
-            Card = new CreditCard("0000 0000 0000 0000", 000, 0);
-            _Voucher = new Voucher();
-            Count++;
-        }
-
-
+        private static int k = 0;
+        public static string Path { get; set; }
+        public Voucher Voucher { get; set; }
+        public CreditCard Card { get; set; }
         public void WriteData(string path)
         {
             Path = path;
@@ -78,5 +77,7 @@ namespace _2_laba_oop
         {
             Card.MoneyCount += 15000;
         }
+
+
     }
 }
