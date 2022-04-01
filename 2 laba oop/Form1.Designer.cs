@@ -270,6 +270,7 @@ namespace _2_laba_oop
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(609, 422);
             this.panelMenu.TabIndex = 4;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // button5
             // 
@@ -843,10 +844,10 @@ namespace _2_laba_oop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
-            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelPlane);
             this.Controls.Add(this.panelPay);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel1);

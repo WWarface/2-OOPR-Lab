@@ -8,12 +8,6 @@ namespace _2_laba_oop
 {
     public class Voucher
     {
-
-            public int Day { get; set; }
-            public int Month { get; set; }
-            public int Duration { get; set; }
-            public string Country { get; set; }
-
         public Voucher()
         {
             Day = 0;
@@ -21,6 +15,9 @@ namespace _2_laba_oop
             Duration = 0;
             Country = "";
         }
-       
+        public int Day { get; set; }
+        public int Month { get; set; }
+        public int Duration { get; set; }
+        public string Country { get; set; }
     }
 }

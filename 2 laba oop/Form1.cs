@@ -85,7 +85,9 @@ namespace _2_laba_oop
             button2.BackColor = Color.Transparent;
         }
 
-        public List<Tourist> tourists = new List<Tourist>();
+
+        public Agency agency = new Agency();
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -95,6 +97,10 @@ namespace _2_laba_oop
                 button2.Enabled = true;
                 button3.Enabled = true;
                 sanya.WriteData("info_Tourist.txt");
+
+
+
+
 
                 label13.Text = Convert.ToString(sanya.Card.MoneyCount);
                 button7.Enabled = true;
@@ -229,8 +235,10 @@ namespace _2_laba_oop
                 info.Month = Int32.Parse(textBox8.Text);
                 info.Duration = Int32.Parse(textBox10.Text);
 
-                info.WriteData("Tourist_Price.txt");
-                
+
+
+                info.WriteData("Tourist_Price.txt");///////////////
+
             }
 
 
@@ -290,7 +298,7 @@ namespace _2_laba_oop
                 clone.Voucher.Country = info.ToCountry;
                 clone.Voucher.Day = info.Day;
                 clone.Voucher.Duration = info.Duration;
-                tourists.Add(clone);
+                agency.tourists.Add(clone);
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
@@ -361,14 +369,10 @@ namespace _2_laba_oop
             panelPlane.Visible = false;
             panelPay.Visible = false;
             panelInfo.Visible = true;
-            Tourist temp = new Tourist();
-            Tourist.Count--;
-            temp.ReadData();
-            if (temp.Card.PayHistory>0)
-            {
+
                 ShowingList.Registerhandler(MessageShow);
                 ShowingList.Init(this);
-            }
+            
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
@@ -376,6 +380,11 @@ namespace _2_laba_oop
              if (Char.IsDigit(e.KeyChar)) return;
             else
                 e.Handled = true;
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
