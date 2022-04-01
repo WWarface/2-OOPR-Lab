@@ -84,6 +84,7 @@ namespace _2_laba_oop
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -808,12 +809,25 @@ namespace _2_laba_oop
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelInfo.Controls.Add(this.label17);
             this.panelInfo.Controls.Add(this.richTextBox1);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInfo.Location = new System.Drawing.Point(170, 80);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(609, 422);
             this.panelInfo.TabIndex = 10;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label17.Location = new System.Drawing.Point(288, 388);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 15);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "label17";
+            this.label17.Visible = false;
             // 
             // richTextBox1
             // 
@@ -829,10 +843,10 @@ namespace _2_laba_oop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelPlane);
             this.Controls.Add(this.panelPay);
-            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.panel1);
@@ -856,6 +870,7 @@ namespace _2_laba_oop
             this.panelPay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -916,6 +931,7 @@ namespace _2_laba_oop
         public System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 

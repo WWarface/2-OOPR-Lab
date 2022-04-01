@@ -15,7 +15,7 @@ namespace _2_laba_oop
 
 
 
-        public List<Tourist> tourists = new List<Tourist>();
+
         public Form1()
         {
             InitializeComponent();
@@ -85,6 +85,8 @@ namespace _2_laba_oop
             button2.BackColor = Color.Transparent;
         }
 
+        public List<Tourist> tourists = new List<Tourist>();
+
         private void button5_Click(object sender, EventArgs e)
         {
             if (textBox1.Text!=""&& textBox2.Text != ""&& textBox2.Text != "")
@@ -103,7 +105,11 @@ namespace _2_laba_oop
         }
 
 
-
+        private void MessageShow(string mes)
+        {
+            label17.Visible = true;
+            label17.Text = mes;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             label1.Text = "AGENCY";
@@ -360,6 +366,7 @@ namespace _2_laba_oop
             temp.ReadData();
             if (temp.Card.PayHistory>0)
             {
+                ShowingList.Registerhandler(MessageShow);
                 ShowingList.Init(this);
             }
         }
