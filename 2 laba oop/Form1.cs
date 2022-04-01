@@ -298,7 +298,7 @@ namespace _2_laba_oop
                 clone.Voucher.Country = info.ToCountry;
                 clone.Voucher.Day = info.Day;
                 clone.Voucher.Duration = info.Duration;
-                agency.tourists.Add(clone);
+                agency.Add(clone);
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
@@ -365,6 +365,7 @@ namespace _2_laba_oop
         private void button3_Click(object sender, EventArgs e)
         {
             label1.Text = "INFO";
+            label19.Text =Convert.ToString(Agency.Count);
             panelMenu.Visible = false;
             panelPlane.Visible = false;
             panelPay.Visible = false;
@@ -385,6 +386,34 @@ namespace _2_laba_oop
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar)) return;
+            else
+                e.Handled = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (textBox11.Text!="")
+            {
+                int num = Int16.Parse(textBox11.Text);
+                if (num<=Agency.Count)
+                {
+                    richTextBox1.Clear();
+                    richTextBox1.AppendText("Name: " + agency[num - 1].Name + "\n");
+                    richTextBox1.AppendText("Surname: " + agency[num - 1].Surname + "\n");
+                    richTextBox1.AppendText("Voucher country: " + agency[num - 1].Voucher.Country + "\n");
+                    richTextBox1.AppendText("Voucher Day: " + agency[num - 1].Voucher.Day + "| Month: " + agency[num - 1].Voucher.Month + "\n");
+                    richTextBox1.AppendText("Voucher Duration: " + agency[num - 1].Voucher.Duration + "\n\n");
+                }
+                else
+                {
+                    MessageBox.Show("Try another number");
+                }
+            }
         }
     }
 }
