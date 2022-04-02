@@ -14,7 +14,7 @@ namespace _2_laba_oop
             set;
         }
 
-        Tourist this[int index]
+        IAgencyInfo this[int index]
         {
             get;
             set;

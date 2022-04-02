@@ -29,9 +29,9 @@ namespace _2_laba_oop
             }
         }
 
-        public Tourist this[int index]
+        public IAgencyInfo this[int index]
         {
-            set { tourists[index] = value; }
+            set { tourists[index] = (Tourist)value; }
             get { return tourists[index]; }
         }
 

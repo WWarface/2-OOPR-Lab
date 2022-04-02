@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _2_laba_oop
 {
-    public sealed class Tourist: Human
+    public sealed class Tourist: Human, IAgencyInfo
     {
         public Tourist() : base("Clone", "Clone", 0)
         {
@@ -27,17 +27,17 @@ namespace _2_laba_oop
         public static string Path { get; set; }
         public Voucher Voucher { get; set; }
         public CreditCard Card { get; set; }
+        public string Label { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public IAgencyInfo this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void WriteData(string path)
         {
-            Path = path;
-            bool IfFirst = false;            
-            if (k>=2)
-            {
-                IfFirst = true;
-            }
+            Path = path;    
+
             //for (int i = 0; i < count; i++)
             //{
-                using (StreamWriter writer = new StreamWriter(path, IfFirst))
+                using (StreamWriter writer = new StreamWriter(path, true))
                 {
                     writer.WriteLine(this.Name);
                     writer.WriteLine(this.Surname);
@@ -49,7 +49,6 @@ namespace _2_laba_oop
                 }
             //}
 
-            k++;
             
         }
 

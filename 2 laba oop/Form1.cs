@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -91,6 +92,7 @@ namespace _2_laba_oop
 
         private void button5_Click(object sender, EventArgs e)
         {
+            button5.Enabled = false;
             if (textBox1.Text!=""&& textBox2.Text != ""&& textBox2.Text != "")
             {
                 Tourist sanya = new Tourist(textBox1.Text, textBox2.Text, Int16.Parse(textBox3.Text));
@@ -279,6 +281,8 @@ namespace _2_laba_oop
 
         private void button7_Click(object sender, EventArgs e)
         {
+            button5.Enabled = true;
+            richTextBox1.Clear();
             Tourist clone = new Tourist();
             Tourist.Count--;
             clone.ReadData();///// card number need to be compered as 1234 1234 1234 1234 with blanks
@@ -320,7 +324,7 @@ namespace _2_laba_oop
 
 
                 clone.Card.PayHistory++;
-                clone.WriteData(Tourist.Path);
+               ////// clone.WriteData(Tourist.Path);
             }
 
             
@@ -383,10 +387,7 @@ namespace _2_laba_oop
                 e.Handled = true;
         }
 
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -403,16 +404,28 @@ namespace _2_laba_oop
                 if (num<=Agency.Count)
                 {
                     richTextBox1.Clear();
-                    richTextBox1.AppendText("Name: " + agency[num - 1].Name + "\n");
-                    richTextBox1.AppendText("Surname: " + agency[num - 1].Surname + "\n");
-                    richTextBox1.AppendText("Voucher country: " + agency[num - 1].Voucher.Country + "\n");
-                    richTextBox1.AppendText("Voucher Day: " + agency[num - 1].Voucher.Day + "| Month: " + agency[num - 1].Voucher.Month + "\n");
-                    richTextBox1.AppendText("Voucher Duration: " + agency[num - 1].Voucher.Duration + "\n\n");
+                    richTextBox1.AppendText("Name: " + ((Tourist)agency[num - 1]).Name + "\n");
+                    richTextBox1.AppendText("Surname: " + ((Tourist)agency[num - 1]).Surname + "\n");
+                    richTextBox1.AppendText("Voucher country: " + ((Tourist)agency[num - 1]).Voucher.Country + "\n");
+                    richTextBox1.AppendText("Voucher Day: " + ((Tourist)agency[num - 1]).Voucher.Day + "| Month: " + ((Tourist)agency[num - 1]).Voucher.Month + "\n");
+                    richTextBox1.AppendText("Voucher Duration: " + ((Tourist)agency[num - 1]).Voucher.Duration + "\n\n");
                 }
                 else
                 {
                     MessageBox.Show("Try another number");
                 }
+            }
+        }
+
+        private void panelInfo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using (StreamWriter writer = new StreamWriter("info_Tourist.txt", false))
+            {              
             }
         }
     }
