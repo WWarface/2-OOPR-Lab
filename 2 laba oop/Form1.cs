@@ -40,6 +40,12 @@ namespace _2_laba_oop
             textBox9.MaxLength = 2;
             textBox8.MaxLength = 2;
             textBox10.MaxLength = 2;
+            textBox10.KeyPress += (a, e) =>
+              {
+                  if (Char.IsDigit(e.KeyChar)) return;
+                  else
+                      e.Handled = true;
+              };
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,6 +119,10 @@ namespace _2_laba_oop
         }
 
 
+
+
+        
+
         private void MessageShow(string mes)
         {
             label17.Visible = true;
@@ -130,6 +140,8 @@ namespace _2_laba_oop
             button3.BackColor = Color.Transparent;
             button4.BackColor = Color.Transparent;
         }
+
+
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -382,9 +394,9 @@ namespace _2_laba_oop
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
         {
-             if (Char.IsDigit(e.KeyChar)) return;
-            else
-                e.Handled = true;
+            // if (Char.IsDigit(e.KeyChar)) return;
+            //else
+            //    e.Handled = true;
         }
 
 
