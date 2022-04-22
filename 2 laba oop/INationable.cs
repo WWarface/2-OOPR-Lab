@@ -8,6 +8,6 @@ namespace _2_laba_oop
 {
     public interface INationable
     {
-        public int Nationality { get; set; }
+        //public int Nationality { get; set; }
     }
 }

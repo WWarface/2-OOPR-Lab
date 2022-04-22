@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace _2_laba_oop
 {
     public delegate void TouristHandler(string path);
-    public sealed class Tourist: Human, IAgencyInfo
+    public sealed class Tourist: Human /*IAgencyInfo*/
     {
         public Tourist() : base("Clone", "Clone", 0)
         {
@@ -50,13 +50,15 @@ namespace _2_laba_oop
         }
         public static int Count { get; set; }
 
+        public int Id { get; set; }
+
         public int Nationality { get; set; }
 
         private TouristHandler Tour;
 
         private static int k = 0;
         public static string Path { get; set; }
-        public Voucher Voucher { get; set; }
+        public Voucher Voucher { get; set; }//Навігаційна властивість
         public CreditCard Card { get; set; }
         public string Label { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

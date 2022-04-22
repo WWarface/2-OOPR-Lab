@@ -31,6 +31,7 @@ namespace _2_laba_oop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -70,7 +71,7 @@ namespace _2_laba_oop
             this.label14 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelPay = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonPurchase = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -107,6 +108,7 @@ namespace _2_laba_oop
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -117,6 +119,24 @@ namespace _2_laba_oop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(170, 502);
             this.panel1.TabIndex = 1;
+            // 
+            // button9
+            // 
+            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(0, 320);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(170, 60);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "ADMIN";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button4
             // 
@@ -624,7 +644,7 @@ namespace _2_laba_oop
             // panelPay
             // 
             this.panelPay.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panelPay.Controls.Add(this.button7);
+            this.panelPay.Controls.Add(this.buttonPurchase);
             this.panelPay.Controls.Add(this.textBox7);
             this.panelPay.Controls.Add(this.textBox6);
             this.panelPay.Controls.Add(this.label9);
@@ -644,24 +664,24 @@ namespace _2_laba_oop
             this.panelPay.TabIndex = 6;
             this.panelPay.Click += new System.EventHandler(this.panelPay_Click);
             // 
-            // button7
+            // buttonPurchase
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(342, 315);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(152, 60);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Purchase";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonPurchase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPurchase.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPurchase.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonPurchase.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonPurchase.Image = ((System.Drawing.Image)(resources.GetObject("buttonPurchase.Image")));
+            this.buttonPurchase.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPurchase.Location = new System.Drawing.Point(342, 315);
+            this.buttonPurchase.Name = "buttonPurchase";
+            this.buttonPurchase.Size = new System.Drawing.Size(152, 60);
+            this.buttonPurchase.TabIndex = 9;
+            this.buttonPurchase.Text = "Purchase";
+            this.buttonPurchase.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPurchase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonPurchase.UseVisualStyleBackColor = true;
+            this.buttonPurchase.Click += new System.EventHandler(this.button7_Click);
             // 
             // textBox7
             // 
@@ -990,7 +1010,7 @@ namespace _2_laba_oop
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonPurchase;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
@@ -1011,6 +1031,7 @@ namespace _2_laba_oop
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button9;
     }
 }
 

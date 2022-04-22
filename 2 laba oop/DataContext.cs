@@ -10,7 +10,7 @@ namespace _2_laba_oop
     class DataContext :DbContext
     {
         public DataContext()
-            : base("DbConnection")
+            : base("DefaultConnection")
         { }
 
         public DbSet<Tourist> Tourists { get; set; }

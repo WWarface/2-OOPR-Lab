@@ -13,7 +13,7 @@ namespace _2_laba_oop
 {
     public partial class Form1 : Form
     {
-
+        DataContext db;
 
 
 
@@ -96,7 +96,7 @@ namespace _2_laba_oop
         public Agency agency = new Agency();
 
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)/////////Menu registr
         {
             button5.Enabled = false;
             if (textBox1.Text!=""&& textBox2.Text != ""&& textBox2.Text != "")
@@ -104,6 +104,13 @@ namespace _2_laba_oop
                 Tourist sanya = new Tourist(textBox1.Text, textBox2.Text, Int16.Parse(textBox3.Text));
                 button2.Enabled = true;
                 button3.Enabled = true;
+                //////////////////////
+                using (db=new DataContext())
+                {
+                    db.Tourists.Add(sanya);
+                    db.SaveChanges();
+                }
+                /////////////////////
                 sanya.WriteData("info_Tourist.txt");
 
 
@@ -111,7 +118,7 @@ namespace _2_laba_oop
 
 
                 label13.Text = Convert.ToString(sanya.Card.MoneyCount);
-                button7.Enabled = true;
+                buttonPurchase.Enabled = true;
                 label8.Visible = true;
                 label9.Visible = true;
 
@@ -309,7 +316,7 @@ namespace _2_laba_oop
                     clone.Card.MoneyCount = clone.Card.MoneyCount + info.Price;
                 }
                 MessageBox.Show("Your payment was successful");
-                button7.Enabled = false;
+                buttonPurchase.Enabled = false;
                 label13.Text = Convert.ToString(clone.Card.MoneyCount);
                 clone.Voucher.Country = info.ToCountry;
                 clone.Voucher.Day = info.Day;
@@ -410,23 +417,23 @@ namespace _2_laba_oop
 
         private void button8_Click(object sender, EventArgs e)
         {
-            if (textBox11.Text!="")
-            {
-                int num = Int16.Parse(textBox11.Text);
-                if (num<=Agency.Count)
-                {
-                    richTextBox1.Clear();
-                    richTextBox1.AppendText("Name: " + ((Tourist)agency[num - 1]).Name + "\n");
-                    richTextBox1.AppendText("Surname: " + ((Tourist)agency[num - 1]).Surname + "\n");
-                    richTextBox1.AppendText("Voucher country: " + ((Tourist)agency[num - 1]).Voucher.Country + "\n");
-                    richTextBox1.AppendText("Voucher Day: " + ((Tourist)agency[num - 1]).Voucher.Day + "| Month: " + ((Tourist)agency[num - 1]).Voucher.Month + "\n");
-                    richTextBox1.AppendText("Voucher Duration: " + ((Tourist)agency[num - 1]).Voucher.Duration + "\n\n");
-                }
-                else
-                {
-                    MessageBox.Show("Try another number");
-                }
-            }
+            //if (textBox11.Text!="")!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SELECTOR
+            //{
+            //    int num = Int16.Parse(textBox11.Text);
+            //    if (num<=Agency.Count)
+            //    {
+            //        richTextBox1.Clear();
+            //        richTextBox1.AppendText("Name: " + ((Tourist)agency[num - 1]).Name + "\n");
+            //        richTextBox1.AppendText("Surname: " + ((Tourist)agency[num - 1]).Surname + "\n");
+            //        richTextBox1.AppendText("Voucher country: " + ((Tourist)agency[num - 1]).Voucher.Country + "\n");
+            //        richTextBox1.AppendText("Voucher Day: " + ((Tourist)agency[num - 1]).Voucher.Day + "| Month: " + ((Tourist)agency[num - 1]).Voucher.Month + "\n");
+            //        richTextBox1.AppendText("Voucher Duration: " + ((Tourist)agency[num - 1]).Voucher.Duration + "\n\n");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Try another number");
+            //    }
+            //}
         }
 
         private void panelInfo_Paint(object sender, PaintEventArgs e)
@@ -446,6 +453,13 @@ namespace _2_laba_oop
             if (Char.IsDigit(e.KeyChar) || e.KeyChar == ' '|| e.KeyChar == 8) return;
             else
                 e.Handled = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Admin Afomr = new Admin();
+
+            Afomr.ShowDialog();
         }
     }
 }
