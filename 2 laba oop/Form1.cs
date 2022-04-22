@@ -152,7 +152,7 @@ namespace _2_laba_oop
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar)&&e.KeyChar!=' ') return;
+            if (Char.IsDigit(e.KeyChar)||e.KeyChar==' ') return;
             else
                 e.Handled = true;
         }
@@ -439,6 +439,13 @@ namespace _2_laba_oop
             using (StreamWriter writer = new StreamWriter("info_Tourist.txt", false))
             {              
             }
+        }
+
+        private void textBox4_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == ' '|| e.KeyChar == 8) return;
+            else
+                e.Handled = true;
         }
     }
 }

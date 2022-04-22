@@ -50,6 +50,8 @@ namespace _2_laba_oop
         }
         public static int Count { get; set; }
 
+        public int Nationality { get; set; }
+
         private TouristHandler Tour;
 
         private static int k = 0;

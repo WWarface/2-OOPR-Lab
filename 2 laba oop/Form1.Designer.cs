@@ -740,6 +740,7 @@ namespace _2_laba_oop
             this.textBox4.Size = new System.Drawing.Size(208, 23);
             this.textBox4.TabIndex = 3;
             this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress_1);
             // 
             // label11
             // 
@@ -915,9 +916,9 @@ namespace _2_laba_oop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
+            this.Controls.Add(this.panelPay);
             this.Controls.Add(this.panelPlane);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelPay);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelTitle);

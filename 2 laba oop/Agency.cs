@@ -39,6 +39,8 @@ namespace _2_laba_oop
 
 
         public static int Count { get; private set; }
+        public int Nationality { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void Add(Tourist tourist)
         {
             tourists.Add(tourist);
