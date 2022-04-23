@@ -54,25 +54,6 @@ namespace _2_laba_oop
             db = new DataContext();
             db.Tourists.Load();
         }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-
-       
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             button2.BackColor = Color.Transparent;
@@ -116,35 +97,16 @@ namespace _2_laba_oop
                 button3.Enabled = true;
                 //////////////////////
                 ///
-
-
                 GlobalTourist = new Tourist1(textBox1.Text, textBox2.Text, Int16.Parse(textBox3.Text));
-
-               
-
-
-
-
-
                 /////////////////////
                 sanya.WriteData("info_Tourist.txt");
-
-
-
-
-
                 label13.Text = Convert.ToString(sanya.Card.MoneyCount);
                 buttonPurchase.Enabled = true;
                 label8.Visible = true;
                 label9.Visible = true;
 
             }   
-        }
-
-
-
-
-        
+        }        
 
         private void MessageShow(string mes)
         {
@@ -289,16 +251,9 @@ namespace _2_laba_oop
                     Voucher1 voucher1 = new Voucher1 { Price = info.Price, Destination = info.ToCountry,TouristId=GlobalTourist.Id, IsPaid = false };
                     db.Vouchers.Add(voucher1);
                     db.SaveChanges();
-
                 }
-
-
-
                 info.WriteData("Tourist_Price.txt");///////////////
-
             }
-
-
         }
 
         private void textBox4_Click(object sender, EventArgs e)
@@ -370,7 +325,7 @@ namespace _2_laba_oop
                 Tourist1 sanya2 = null;
                 using (var db = new DataContext())
                 {
-                    sanya2 = db.Tourists.FirstOrDefault(x => x.Name == textBox1.Text);///READ
+                    sanya2 = db.Tourists.FirstOrDefault(x => x.Name == textBox1.Text);///Delete
                     db.Tourists.Remove(sanya2);
                     db.SaveChanges();
                 }
@@ -392,15 +347,9 @@ namespace _2_laba_oop
                 radioButton6.Checked = false;
                 radioButton7.Checked = false;
                 radioButton8.Checked = false;
-
-
                 clone.Card.PayHistory++;
                ////// clone.WriteData(Tourist.Path);
             }
-
-
-
-
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
@@ -414,12 +363,6 @@ namespace _2_laba_oop
         {
             label9.Visible = false;
         }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -486,11 +429,6 @@ namespace _2_laba_oop
                     MessageBox.Show("Try another number");
                 }
             }
-        }
-
-        private void panelInfo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
