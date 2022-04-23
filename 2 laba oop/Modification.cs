@@ -27,7 +27,7 @@ namespace _2_laba_oop
             if (textName.Text!=""&& textSurname.Text != ""&& textAge.Text != "")
             {
                 Tourist1 sanya = null;
-                using (var db =new DataContext())
+                using (var db =new DataContext())///////UPDATE
                 {
                     sanya = db.Tourists.FirstOrDefault(p => p.Name == form1.textBox1.Text);
                     if (textName.Text != "")
@@ -46,6 +46,11 @@ namespace _2_laba_oop
                     db.SaveChanges();
                 }
             }
+        }
+
+        private void Modification_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

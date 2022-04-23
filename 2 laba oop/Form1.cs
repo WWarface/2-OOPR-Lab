@@ -235,7 +235,7 @@ namespace _2_laba_oop
                 info.Duration = Int32.Parse(textBox10.Text);
 
 
-                using (db = new DataContext())
+                using (db = new DataContext())////CREATE
                 {
                     var test = from b in db.Tourists
                                where b.Name.Equals(GlobalTourist.Name)

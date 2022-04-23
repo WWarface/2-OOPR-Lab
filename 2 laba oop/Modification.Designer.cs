@@ -142,6 +142,7 @@ namespace _2_laba_oop
             this.Controls.Add(this.label2);
             this.Name = "Modification";
             this.Text = "Modification";
+            this.Load += new System.EventHandler(this.Modification_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
