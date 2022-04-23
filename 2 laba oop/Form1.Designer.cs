@@ -867,7 +867,6 @@ namespace _2_laba_oop
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(609, 502);
             this.panelInfo.TabIndex = 10;
-            this.panelInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInfo_Paint);
             // 
             // button8
             // 
