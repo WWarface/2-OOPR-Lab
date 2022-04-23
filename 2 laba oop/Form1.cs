@@ -8,17 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
+
 
 namespace _2_laba_oop
 {
     public partial class Form1 : Form
     {
         DataContext db;
-
-
+        Tourist1 GlobalTourist;
+        User GlobalUser;
 
         public Form1()
         {
+            GlobalTourist = new Tourist1();
             InitializeComponent();
             panel1.BackColor = Color.FromArgb(0, 115, 230);
             panelLogo.BackColor = Color.FromArgb(0, 184, 230);
@@ -46,6 +50,9 @@ namespace _2_laba_oop
                   else
                       e.Handled = true;
               };
+
+            db = new DataContext();
+            db.Tourists.Load();
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,15 +108,24 @@ namespace _2_laba_oop
             button5.Enabled = false;
             if (textBox1.Text!=""&& textBox2.Text != ""&& textBox2.Text != "")
             {
-                Tourist sanya = new Tourist(textBox1.Text, textBox2.Text, Int16.Parse(textBox3.Text));
+                GlobalTourist.Name = textBox1.Text;
+                GlobalTourist.Surname = textBox2.Text;
+                GlobalTourist.Age = Int32.Parse(textBox3.Text);
+                Tourist sanya = new Tourist(textBox1.Text, textBox2.Text, Int32.Parse(textBox3.Text));
                 button2.Enabled = true;
                 button3.Enabled = true;
                 //////////////////////
-                using (db=new DataContext())
-                {
-                    db.Tourists.Add(sanya);
-                    db.SaveChanges();
-                }
+                ///
+
+
+                GlobalTourist = new Tourist1(textBox1.Text, textBox2.Text, Int16.Parse(textBox3.Text));
+
+               
+
+
+
+
+
                 /////////////////////
                 sanya.WriteData("info_Tourist.txt");
 
@@ -257,6 +273,26 @@ namespace _2_laba_oop
                 info.Duration = Int32.Parse(textBox10.Text);
 
 
+                using (db = new DataContext())
+                {
+                    var test = from b in db.Tourists
+                               where b.Name.Equals(GlobalTourist.Name)
+                               select b;
+                    if (test.Count()==0)
+                    {
+                        db.Tourists.Add(GlobalTourist);
+                        db.SaveChanges();
+                        User user = new User { Id = GlobalTourist.Id, Login = GlobalUser.Login, Password = GlobalUser.Password };
+                        db.Users.Add(user);
+                        db.SaveChanges();
+                    }                   
+                    Voucher1 voucher1 = new Voucher1 { Price = info.Price, Destination = info.ToCountry,TouristId=GlobalTourist.Id, IsPaid = false };
+                    db.Vouchers.Add(voucher1);
+                    db.SaveChanges();
+
+                }
+
+
 
                 info.WriteData("Tourist_Price.txt");///////////////
 
@@ -298,10 +334,19 @@ namespace _2_laba_oop
             button2.BackColor = Color.Transparent;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)///////////////Зчитування даних з бази 
         {
             button5.Enabled = true;
             richTextBox1.Clear();
+
+            Tourist1 sanya=null;
+            using (var db = new DataContext())
+            {
+                sanya = db.Tourists.FirstOrDefault(x => x.Name == textBox1.Text);///READ
+            }
+
+
+
             Tourist clone = new Tourist();
             Tourist.Count--;
             clone.ReadData();///// card number need to be compered as 1234 1234 1234 1234 with blanks
@@ -322,6 +367,13 @@ namespace _2_laba_oop
                 clone.Voucher.Day = info.Day;
                 clone.Voucher.Duration = info.Duration;
                 agency.Add(clone);
+                Tourist1 sanya2 = null;
+                using (var db = new DataContext())
+                {
+                    sanya2 = db.Tourists.FirstOrDefault(x => x.Name == textBox1.Text);///READ
+                    db.Tourists.Remove(sanya2);
+                    db.SaveChanges();
+                }
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
@@ -346,7 +398,7 @@ namespace _2_laba_oop
                ////// clone.WriteData(Tourist.Path);
             }
 
-            
+
 
 
         }
@@ -400,7 +452,7 @@ namespace _2_laba_oop
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
-        {
+       {
             // if (Char.IsDigit(e.KeyChar)) return;
             //else
             //    e.Handled = true;
@@ -417,23 +469,23 @@ namespace _2_laba_oop
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //if (textBox11.Text!="")!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SELECTOR
-            //{
-            //    int num = Int16.Parse(textBox11.Text);
-            //    if (num<=Agency.Count)
-            //    {
-            //        richTextBox1.Clear();
-            //        richTextBox1.AppendText("Name: " + ((Tourist)agency[num - 1]).Name + "\n");
-            //        richTextBox1.AppendText("Surname: " + ((Tourist)agency[num - 1]).Surname + "\n");
-            //        richTextBox1.AppendText("Voucher country: " + ((Tourist)agency[num - 1]).Voucher.Country + "\n");
-            //        richTextBox1.AppendText("Voucher Day: " + ((Tourist)agency[num - 1]).Voucher.Day + "| Month: " + ((Tourist)agency[num - 1]).Voucher.Month + "\n");
-            //        richTextBox1.AppendText("Voucher Duration: " + ((Tourist)agency[num - 1]).Voucher.Duration + "\n\n");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Try another number");
-            //    }
-            //}
+            if (textBox11.Text!="")
+            {
+                int num = Int16.Parse(textBox11.Text);
+                if (num<=Agency.Count)
+                {
+                    richTextBox1.Clear();
+                    richTextBox1.AppendText("Name: " + ((Tourist)agency[num - 1]).Name + "\n");
+                    richTextBox1.AppendText("Surname: " + ((Tourist)agency[num - 1]).Surname + "\n");
+                    richTextBox1.AppendText("Voucher country: " + ((Tourist)agency[num - 1]).Voucher.Country + "\n");
+                    richTextBox1.AppendText("Voucher Day: " + ((Tourist)agency[num - 1]).Voucher.Day + "| Month: " + ((Tourist)agency[num - 1]).Voucher.Month + "\n");
+                    richTextBox1.AppendText("Voucher Duration: " + ((Tourist)agency[num - 1]).Voucher.Duration + "\n\n");
+                }
+                else
+                {
+                    MessageBox.Show("Try another number");
+                }
+            }
         }
 
         private void panelInfo_Paint(object sender, PaintEventArgs e)
@@ -460,6 +512,24 @@ namespace _2_laba_oop
             Admin Afomr = new Admin();
 
             Afomr.ShowDialog();
+        }
+         
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            Modification mform = new Modification(this);
+
+            mform.ShowDialog();
+
+
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            if (textBoxLogin.Text=="l"&&maskedTextBoxPassword.Text=="1")
+            {                
+                GlobalUser = new User { Login = textBoxLogin.Text, Password = maskedTextBoxPassword.Text};
+                panelRegister.Visible = false;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace _2_laba_oop
 {
     public delegate void TouristHandler(string path);
-    public sealed class Tourist: Human /*IAgencyInfo*/
+    public sealed class Tourist: Human, IAgencyInfo
     {
         public Tourist() : base("Clone", "Clone", 0)
         {

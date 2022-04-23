@@ -13,7 +13,9 @@ namespace _2_laba_oop
             : base("DefaultConnection")
         { }
 
-        public DbSet<Tourist> Tourists { get; set; }
-        public DbSet<Voucher> Vouchers { get; set; }
+        public DbSet<Tourist1> Tourists { get; set; }
+        public DbSet<Voucher1> Vouchers { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
