@@ -51,8 +51,8 @@ namespace _2_laba_oop
                       e.Handled = true;
               };
 
-            db = new DataContext();
-            db.Tourists.Load();
+            //db = new DataContext();
+            //db.Tourists.Load();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -325,7 +325,8 @@ namespace _2_laba_oop
                 Tourist1 sanya2 = null;
                 using (var db = new DataContext())
                 {
-                    sanya2 = db.Tourists.FirstOrDefault(x => x.Name == textBox1.Text);///Delete
+                    sanya2 = db.Tourists.FirstOrDefault(x => x.Name == textBox1.Text);///Delete MUST BE REWORKED
+                    db.Users.Remove(sanya2.User);
                     db.Tourists.Remove(sanya2);
                     db.SaveChanges();
                 }
@@ -339,6 +340,14 @@ namespace _2_laba_oop
                 textBox8.Clear();
                 textBox9.Clear();
                 textBox10.Clear();
+
+                foreach (var c in this.Controls)
+                {
+                    if (c is RadioButton)
+                    {
+                        ((RadioButton)c).Checked = false;
+                    }
+                }
                 radioButton1.Checked = false;
                 radioButton2.Checked = false;
                 radioButton3.Checked = false;
@@ -466,8 +475,28 @@ namespace _2_laba_oop
             if (textBoxLogin.Text=="l"&&maskedTextBoxPassword.Text=="1")
             {                
                 GlobalUser = new User { Login = textBoxLogin.Text, Password = maskedTextBoxPassword.Text};
-                panelRegister.Visible = false;
+                panelLogin.Visible = false;
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panelRegistration.Visible = true;
+        }
+
+        private void buttonSubmitRegistration_Click(object sender, EventArgs e)
+        {
+            if (textBoxLoginRegistration.Text!=""&&maskedTextBoxPasswordRegistration1.Text!=""&&maskedTextBoxPasswordRegistration2.Text!="")
+            {
+                if (maskedTextBoxPasswordRegistration1.Text!=maskedTextBoxPasswordRegistration2.Text)
+                {
+                    MessageBox.Show("Password are not the same");
+                    return;
+                }
+
+
+            }
+
         }
     }
 }

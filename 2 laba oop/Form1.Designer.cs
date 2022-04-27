@@ -93,13 +93,22 @@ namespace _2_laba_oop
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.panelRegister = new System.Windows.Forms.Panel();
-            this.labelRegister = new System.Windows.Forms.Label();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.maskedTextBoxPassword = new System.Windows.Forms.MaskedTextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.panelLogin = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.buttonEnter = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.maskedTextBoxPassword = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.labelRegister = new System.Windows.Forms.Label();
+            this.panelRegistration = new System.Windows.Forms.Panel();
+            this.textBoxLoginRegistration = new System.Windows.Forms.TextBox();
+            this.maskedTextBoxPasswordRegistration1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPasswordRegistration2 = new System.Windows.Forms.MaskedTextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.buttonSubmitRegistration = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -112,7 +121,8 @@ namespace _2_laba_oop
             this.panelPay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelInfo.SuspendLayout();
-            this.panelRegister.SuspendLayout();
+            this.panelLogin.SuspendLayout();
+            this.panelRegistration.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -949,68 +959,37 @@ namespace _2_laba_oop
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // panelRegister
+            // panelLogin
             // 
-            this.panelRegister.BackColor = System.Drawing.Color.Transparent;
-            this.panelRegister.Controls.Add(this.buttonEnter);
-            this.panelRegister.Controls.Add(this.label22);
-            this.panelRegister.Controls.Add(this.label21);
-            this.panelRegister.Controls.Add(this.maskedTextBoxPassword);
-            this.panelRegister.Controls.Add(this.textBoxLogin);
-            this.panelRegister.Controls.Add(this.labelRegister);
-            this.panelRegister.Location = new System.Drawing.Point(170, 80);
-            this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(608, 421);
-            this.panelRegister.TabIndex = 5;
+            this.panelLogin.BackColor = System.Drawing.Color.White;
+            this.panelLogin.Controls.Add(this.linkLabel1);
+            this.panelLogin.Controls.Add(this.buttonEnter);
+            this.panelLogin.Controls.Add(this.label22);
+            this.panelLogin.Controls.Add(this.label21);
+            this.panelLogin.Controls.Add(this.maskedTextBoxPassword);
+            this.panelLogin.Controls.Add(this.textBoxLogin);
+            this.panelLogin.Controls.Add(this.labelRegister);
+            this.panelLogin.Location = new System.Drawing.Point(170, 80);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(608, 421);
+            this.panelLogin.TabIndex = 5;
             // 
-            // labelRegister
+            // linkLabel1
             // 
-            this.labelRegister.AutoSize = true;
-            this.labelRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelRegister.Location = new System.Drawing.Point(196, 28);
-            this.labelRegister.Name = "labelRegister";
-            this.labelRegister.Size = new System.Drawing.Size(187, 30);
-            this.labelRegister.TabIndex = 0;
-            this.labelRegister.Text = "Register or Sign in";
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Location = new System.Drawing.Point(232, 211);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(100, 23);
-            this.textBoxLogin.TabIndex = 2;
-            // 
-            // maskedTextBoxPassword
-            // 
-            this.maskedTextBoxPassword.Location = new System.Drawing.Point(232, 260);
-            this.maskedTextBoxPassword.Name = "maskedTextBoxPassword";
-            this.maskedTextBoxPassword.PasswordChar = '*';
-            this.maskedTextBoxPassword.Size = new System.Drawing.Size(100, 23);
-            this.maskedTextBoxPassword.TabIndex = 3;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(151, 211);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(49, 21);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Login";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.Location = new System.Drawing.Point(150, 262);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(76, 21);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "Password";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
+            this.linkLabel1.Location = new System.Drawing.Point(255, 246);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(55, 20);
+            this.linkLabel1.TabIndex = 7;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Sign up";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // buttonEnter
             // 
-            this.buttonEnter.Location = new System.Drawing.Point(232, 308);
+            this.buttonEnter.Location = new System.Drawing.Point(232, 284);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(100, 39);
             this.buttonEnter.TabIndex = 6;
@@ -1018,13 +997,133 @@ namespace _2_laba_oop
             this.buttonEnter.UseVisualStyleBackColor = true;
             this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(148, 208);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(76, 21);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "Password";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(157, 165);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(49, 21);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "Login";
+            // 
+            // maskedTextBoxPassword
+            // 
+            this.maskedTextBoxPassword.Location = new System.Drawing.Point(232, 206);
+            this.maskedTextBoxPassword.Name = "maskedTextBoxPassword";
+            this.maskedTextBoxPassword.PasswordChar = '*';
+            this.maskedTextBoxPassword.Size = new System.Drawing.Size(100, 23);
+            this.maskedTextBoxPassword.TabIndex = 3;
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Location = new System.Drawing.Point(232, 163);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(100, 23);
+            this.textBoxLogin.TabIndex = 2;
+            // 
+            // labelRegister
+            // 
+            this.labelRegister.AutoSize = true;
+            this.labelRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelRegister.Location = new System.Drawing.Point(196, 28);
+            this.labelRegister.Name = "labelRegister";
+            this.labelRegister.Size = new System.Drawing.Size(171, 30);
+            this.labelRegister.TabIndex = 0;
+            this.labelRegister.Text = "Login or Sign up";
+            // 
+            // panelRegistration
+            // 
+            this.panelRegistration.Controls.Add(this.buttonSubmitRegistration);
+            this.panelRegistration.Controls.Add(this.label25);
+            this.panelRegistration.Controls.Add(this.label24);
+            this.panelRegistration.Controls.Add(this.label23);
+            this.panelRegistration.Controls.Add(this.maskedTextBoxPasswordRegistration2);
+            this.panelRegistration.Controls.Add(this.maskedTextBoxPasswordRegistration1);
+            this.panelRegistration.Controls.Add(this.textBoxLoginRegistration);
+            this.panelRegistration.Location = new System.Drawing.Point(169, 80);
+            this.panelRegistration.Name = "panelRegistration";
+            this.panelRegistration.Size = new System.Drawing.Size(608, 422);
+            this.panelRegistration.TabIndex = 8;
+            // 
+            // textBoxLoginRegistration
+            // 
+            this.textBoxLoginRegistration.Location = new System.Drawing.Point(284, 162);
+            this.textBoxLoginRegistration.Name = "textBoxLoginRegistration";
+            this.textBoxLoginRegistration.Size = new System.Drawing.Size(100, 23);
+            this.textBoxLoginRegistration.TabIndex = 0;
+            // 
+            // maskedTextBoxPasswordRegistration1
+            // 
+            this.maskedTextBoxPasswordRegistration1.Location = new System.Drawing.Point(284, 213);
+            this.maskedTextBoxPasswordRegistration1.Name = "maskedTextBoxPasswordRegistration1";
+            this.maskedTextBoxPasswordRegistration1.PromptChar = '*';
+            this.maskedTextBoxPasswordRegistration1.Size = new System.Drawing.Size(100, 23);
+            this.maskedTextBoxPasswordRegistration1.TabIndex = 1;
+            // 
+            // maskedTextBoxPasswordRegistration2
+            // 
+            this.maskedTextBoxPasswordRegistration2.Location = new System.Drawing.Point(284, 261);
+            this.maskedTextBoxPasswordRegistration2.Name = "maskedTextBoxPasswordRegistration2";
+            this.maskedTextBoxPasswordRegistration2.PromptChar = '*';
+            this.maskedTextBoxPasswordRegistration2.Size = new System.Drawing.Size(100, 23);
+            this.maskedTextBoxPasswordRegistration2.TabIndex = 2;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(229, 171);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 15);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Login";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(221, 216);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(57, 15);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Password";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(183, 265);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(87, 15);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "Retry Password";
+            // 
+            // buttonSubmitRegistration
+            // 
+            this.buttonSubmitRegistration.Location = new System.Drawing.Point(293, 330);
+            this.buttonSubmitRegistration.Name = "buttonSubmitRegistration";
+            this.buttonSubmitRegistration.Size = new System.Drawing.Size(75, 23);
+            this.buttonSubmitRegistration.TabIndex = 6;
+            this.buttonSubmitRegistration.Text = "Submit";
+            this.buttonSubmitRegistration.UseVisualStyleBackColor = true;
+            this.buttonSubmitRegistration.Click += new System.EventHandler(this.buttonSubmitRegistration_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
-            this.Controls.Add(this.panelRegister);
+            this.Controls.Add(this.panelRegistration);
+            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelPay);
             this.Controls.Add(this.panelTitle);
@@ -1054,8 +1153,10 @@ namespace _2_laba_oop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
-            this.panelRegister.ResumeLayout(false);
-            this.panelRegister.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
+            this.panelRegistration.ResumeLayout(false);
+            this.panelRegistration.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1124,13 +1225,22 @@ namespace _2_laba_oop
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button buttonModify;
         protected internal System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panelRegister;
+        private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPassword;
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label labelRegister;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Panel panelRegistration;
+        private System.Windows.Forms.Button buttonSubmitRegistration;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration1;
+        private System.Windows.Forms.TextBox textBoxLoginRegistration;
     }
 }
 

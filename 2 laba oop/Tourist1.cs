@@ -28,10 +28,10 @@ namespace _2_laba_oop
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public ICollection<Voucher1> Vouchers { get; set; }
+        public ICollection<Voucher1> Vouchers { get; set; }//navigation prop
         public int Age { get; set; }
 
-        public User User { get; set; }
+        public User User { get; set; }//navigation prop
 
         //public Voucher Voucher { get; set; }////navigation prop
     }
