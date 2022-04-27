@@ -102,13 +102,21 @@ namespace _2_laba_oop
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.labelRegister = new System.Windows.Forms.Label();
             this.panelRegistration = new System.Windows.Forms.Panel();
-            this.textBoxLoginRegistration = new System.Windows.Forms.TextBox();
-            this.maskedTextBoxPasswordRegistration1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxPasswordRegistration2 = new System.Windows.Forms.MaskedTextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.buttonSubmitRegistration = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.maskedTextBoxPasswordRegistration2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxPasswordRegistration1 = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxLoginRegistration = new System.Windows.Forms.TextBox();
+            this.panelTouristName = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -123,6 +131,7 @@ namespace _2_laba_oop
             this.panelInfo.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelRegistration.SuspendLayout();
+            this.panelTouristName.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -978,7 +987,7 @@ namespace _2_laba_oop
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(17)))), ((int)(((byte)(125)))));
             this.linkLabel1.Location = new System.Drawing.Point(255, 246);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(55, 20);
@@ -1056,56 +1065,6 @@ namespace _2_laba_oop
             this.panelRegistration.Size = new System.Drawing.Size(608, 422);
             this.panelRegistration.TabIndex = 8;
             // 
-            // textBoxLoginRegistration
-            // 
-            this.textBoxLoginRegistration.Location = new System.Drawing.Point(284, 162);
-            this.textBoxLoginRegistration.Name = "textBoxLoginRegistration";
-            this.textBoxLoginRegistration.Size = new System.Drawing.Size(100, 23);
-            this.textBoxLoginRegistration.TabIndex = 0;
-            // 
-            // maskedTextBoxPasswordRegistration1
-            // 
-            this.maskedTextBoxPasswordRegistration1.Location = new System.Drawing.Point(284, 213);
-            this.maskedTextBoxPasswordRegistration1.Name = "maskedTextBoxPasswordRegistration1";
-            this.maskedTextBoxPasswordRegistration1.PromptChar = '*';
-            this.maskedTextBoxPasswordRegistration1.Size = new System.Drawing.Size(100, 23);
-            this.maskedTextBoxPasswordRegistration1.TabIndex = 1;
-            // 
-            // maskedTextBoxPasswordRegistration2
-            // 
-            this.maskedTextBoxPasswordRegistration2.Location = new System.Drawing.Point(284, 261);
-            this.maskedTextBoxPasswordRegistration2.Name = "maskedTextBoxPasswordRegistration2";
-            this.maskedTextBoxPasswordRegistration2.PromptChar = '*';
-            this.maskedTextBoxPasswordRegistration2.Size = new System.Drawing.Size(100, 23);
-            this.maskedTextBoxPasswordRegistration2.TabIndex = 2;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(229, 171);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 15);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Login";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(221, 216);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(57, 15);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Password";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(183, 265);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(87, 15);
-            this.label25.TabIndex = 5;
-            this.label25.Text = "Retry Password";
-            // 
             // buttonSubmitRegistration
             // 
             this.buttonSubmitRegistration.Location = new System.Drawing.Point(293, 330);
@@ -1116,14 +1075,137 @@ namespace _2_laba_oop
             this.buttonSubmitRegistration.UseVisualStyleBackColor = true;
             this.buttonSubmitRegistration.Click += new System.EventHandler(this.buttonSubmitRegistration_Click);
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(183, 265);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(87, 15);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "Retry Password";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(221, 216);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(57, 15);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Password";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(229, 171);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 15);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Login";
+            // 
+            // maskedTextBoxPasswordRegistration2
+            // 
+            this.maskedTextBoxPasswordRegistration2.Location = new System.Drawing.Point(284, 261);
+            this.maskedTextBoxPasswordRegistration2.Name = "maskedTextBoxPasswordRegistration2";
+            this.maskedTextBoxPasswordRegistration2.PromptChar = '*';
+            this.maskedTextBoxPasswordRegistration2.Size = new System.Drawing.Size(100, 23);
+            this.maskedTextBoxPasswordRegistration2.TabIndex = 2;
+            // 
+            // maskedTextBoxPasswordRegistration1
+            // 
+            this.maskedTextBoxPasswordRegistration1.Location = new System.Drawing.Point(284, 213);
+            this.maskedTextBoxPasswordRegistration1.Name = "maskedTextBoxPasswordRegistration1";
+            this.maskedTextBoxPasswordRegistration1.PromptChar = '*';
+            this.maskedTextBoxPasswordRegistration1.Size = new System.Drawing.Size(100, 23);
+            this.maskedTextBoxPasswordRegistration1.TabIndex = 1;
+            // 
+            // textBoxLoginRegistration
+            // 
+            this.textBoxLoginRegistration.Location = new System.Drawing.Point(284, 162);
+            this.textBoxLoginRegistration.Name = "textBoxLoginRegistration";
+            this.textBoxLoginRegistration.Size = new System.Drawing.Size(100, 23);
+            this.textBoxLoginRegistration.TabIndex = 0;
+            // 
+            // panelTouristName
+            // 
+            this.panelTouristName.Controls.Add(this.button7);
+            this.panelTouristName.Controls.Add(this.label28);
+            this.panelTouristName.Controls.Add(this.label27);
+            this.panelTouristName.Controls.Add(this.label26);
+            this.panelTouristName.Controls.Add(this.textBox14);
+            this.panelTouristName.Controls.Add(this.textBox13);
+            this.panelTouristName.Controls.Add(this.textBox12);
+            this.panelTouristName.Location = new System.Drawing.Point(168, 80);
+            this.panelTouristName.Name = "panelTouristName";
+            this.panelTouristName.Size = new System.Drawing.Size(610, 421);
+            this.panelTouristName.TabIndex = 8;
+            this.panelTouristName.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTouristName_Paint);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(237, 304);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Submit";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(131, 227);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(28, 15);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "Age";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(131, 176);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 15);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Surname";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(130, 129);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(39, 15);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Name";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(219, 220);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(100, 23);
+            this.textBox14.TabIndex = 2;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(219, 168);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(100, 23);
+            this.textBox13.TabIndex = 1;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(219, 119);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(100, 23);
+            this.textBox12.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
-            this.Controls.Add(this.panelRegistration);
             this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panelTouristName);
+            this.Controls.Add(this.panelRegistration);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelPay);
             this.Controls.Add(this.panelTitle);
@@ -1157,6 +1239,8 @@ namespace _2_laba_oop
             this.panelLogin.PerformLayout();
             this.panelRegistration.ResumeLayout(false);
             this.panelRegistration.PerformLayout();
+            this.panelTouristName.ResumeLayout(false);
+            this.panelTouristName.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1241,6 +1325,14 @@ namespace _2_laba_oop
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration2;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration1;
         private System.Windows.Forms.TextBox textBoxLoginRegistration;
+        private System.Windows.Forms.Panel panelTouristName;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox12;
     }
 }
 

@@ -19,7 +19,7 @@ namespace _2_laba_oop
         DataContext db;
         Tourist1 GlobalTourist;
         User GlobalUser;
-
+        int UserID;
         public Form1()
         {
             GlobalTourist = new Tourist1();
@@ -240,14 +240,14 @@ namespace _2_laba_oop
                     var test = from b in db.Tourists
                                where b.Name.Equals(GlobalTourist.Name)
                                select b;
-                    if (test.Count()==0)
-                    {
-                        db.Tourists.Add(GlobalTourist);
-                        db.SaveChanges();
-                        User user = new User { Id = GlobalTourist.Id, Login = GlobalUser.Login, Password = GlobalUser.Password };
-                        db.Users.Add(user);
-                        db.SaveChanges();
-                    }                   
+                    //if (test.Count()==0)
+                    //{
+                    //    db.Tourists.Add(GlobalTourist);
+                    //    db.SaveChanges();
+                    //    User user = new User { Id = GlobalTourist.Id, Login = GlobalUser.Login, Password = GlobalUser.Password };
+                    //    db.Users.Add(user);
+                    //    db.SaveChanges();
+                    //}                   
                     Voucher1 voucher1 = new Voucher1 { Price = info.Price, Destination = info.ToCountry,TouristId=GlobalTourist.Id, IsPaid = false };
                     db.Vouchers.Add(voucher1);
                     db.SaveChanges();
@@ -472,15 +472,30 @@ namespace _2_laba_oop
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            if (textBoxLogin.Text=="l"&&maskedTextBoxPassword.Text=="1")
-            {                
-                GlobalUser = new User { Login = textBoxLogin.Text, Password = maskedTextBoxPassword.Text};
-                panelLogin.Visible = false;
+            using(db = new DataContext())
+            {
+                User c=null;
+                try
+                {
+                  
+                    c = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+
+                if (maskedTextBoxPassword.Text == c.Password && c != null)
+                {
+                    panelLogin.Visible = false;
+                    panelTouristName.Visible = true;
+                }
             }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            panelLogin.Visible = false;
             panelRegistration.Visible = true;
         }
 
@@ -493,9 +508,21 @@ namespace _2_laba_oop
                     MessageBox.Show("Password are not the same");
                     return;
                 }
-
+                User user = new User {Login = textBoxLoginRegistration.Text, Password = maskedTextBoxPasswordRegistration1.Text };
+                using (db = new DataContext())
+                {
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+                panelRegistration.Visible = false;
+                panelLogin.Visible = true;
+                UserID = user.Id;
 
             }
+        }
+
+        private void panelTouristName_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

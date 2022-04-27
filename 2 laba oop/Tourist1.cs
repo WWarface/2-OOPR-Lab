@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2_laba_oop
 {
@@ -23,6 +23,7 @@ namespace _2_laba_oop
             Age = age;
         }
 
+        [ForeignKey("User")]
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
@@ -30,6 +31,7 @@ namespace _2_laba_oop
 
         public ICollection<Voucher1> Vouchers { get; set; }//navigation prop
         public int Age { get; set; }
+
 
         public User User { get; set; }//navigation prop
 

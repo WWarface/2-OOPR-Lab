@@ -11,14 +11,13 @@ namespace _2_laba_oop
     class User
     {
         [Key]
-        [ForeignKey("Tourist1")]
         public int Id { get; set; }
 
         public string Login { get; set; }
 
         public string Password { get; set; }
 
-        [Required]
+        //[Required]
         public Tourist1 Tourist1 { get; set; }
     }
 }
