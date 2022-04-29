@@ -109,14 +109,6 @@ namespace _2_laba_oop
             this.maskedTextBoxPasswordRegistration2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPasswordRegistration1 = new System.Windows.Forms.MaskedTextBox();
             this.textBoxLoginRegistration = new System.Windows.Forms.TextBox();
-            this.panelTouristName = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -131,7 +123,6 @@ namespace _2_laba_oop
             this.panelInfo.SuspendLayout();
             this.panelLogin.SuspendLayout();
             this.panelRegistration.SuspendLayout();
-            this.panelTouristName.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -440,9 +431,9 @@ namespace _2_laba_oop
             this.panelPlane.Controls.Add(this.label14);
             this.panelPlane.Controls.Add(this.label5);
             this.panelPlane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPlane.Location = new System.Drawing.Point(170, 0);
+            this.panelPlane.Location = new System.Drawing.Point(0, 0);
             this.panelPlane.Name = "panelPlane";
-            this.panelPlane.Size = new System.Drawing.Size(609, 502);
+            this.panelPlane.Size = new System.Drawing.Size(779, 502);
             this.panelPlane.TabIndex = 4;
             // 
             // textBox9
@@ -617,7 +608,7 @@ namespace _2_laba_oop
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(321, 373);
+            this.label6.Location = new System.Drawing.Point(406, 373);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 30);
             this.label6.TabIndex = 2;
@@ -631,7 +622,7 @@ namespace _2_laba_oop
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label15.Location = new System.Drawing.Point(512, 295);
+            this.label15.Location = new System.Drawing.Point(597, 295);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(45, 30);
             this.label15.TabIndex = 2;
@@ -645,7 +636,7 @@ namespace _2_laba_oop
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(456, 160);
+            this.label16.Location = new System.Drawing.Point(541, 160);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(101, 30);
             this.label16.TabIndex = 2;
@@ -659,7 +650,7 @@ namespace _2_laba_oop
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(453, 295);
+            this.label14.Location = new System.Drawing.Point(538, 295);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 30);
             this.label14.TabIndex = 2;
@@ -673,7 +664,7 @@ namespace _2_laba_oop
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(208, 373);
+            this.label5.Location = new System.Drawing.Point(293, 373);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 30);
             this.label5.TabIndex = 2;
@@ -697,9 +688,9 @@ namespace _2_laba_oop
             this.panelPay.Controls.Add(this.label12);
             this.panelPay.Controls.Add(this.label7);
             this.panelPay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPay.Location = new System.Drawing.Point(170, 80);
+            this.panelPay.Location = new System.Drawing.Point(0, 0);
             this.panelPay.Name = "panelPay";
-            this.panelPay.Size = new System.Drawing.Size(609, 422);
+            this.panelPay.Size = new System.Drawing.Size(779, 502);
             this.panelPay.TabIndex = 6;
             this.panelPay.Click += new System.EventHandler(this.panelPay_Click);
             // 
@@ -712,7 +703,7 @@ namespace _2_laba_oop
             this.buttonPurchase.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonPurchase.Image = ((System.Drawing.Image)(resources.GetObject("buttonPurchase.Image")));
             this.buttonPurchase.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPurchase.Location = new System.Drawing.Point(342, 315);
+            this.buttonPurchase.Location = new System.Drawing.Point(427, 355);
             this.buttonPurchase.Name = "buttonPurchase";
             this.buttonPurchase.Size = new System.Drawing.Size(152, 60);
             this.buttonPurchase.TabIndex = 9;
@@ -725,7 +716,7 @@ namespace _2_laba_oop
             // textBox7
             // 
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.Location = new System.Drawing.Point(358, 238);
+            this.textBox7.Location = new System.Drawing.Point(443, 278);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(132, 23);
             this.textBox7.TabIndex = 8;
@@ -733,7 +724,7 @@ namespace _2_laba_oop
             // textBox6
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.Location = new System.Drawing.Point(358, 190);
+            this.textBox6.Location = new System.Drawing.Point(443, 230);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(132, 23);
             this.textBox6.TabIndex = 8;
@@ -744,7 +735,7 @@ namespace _2_laba_oop
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.MenuBar;
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label9.Location = new System.Drawing.Point(412, 145);
+            this.label9.Location = new System.Drawing.Point(497, 185);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 15);
             this.label9.TabIndex = 7;
@@ -756,7 +747,7 @@ namespace _2_laba_oop
             this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox5.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Location = new System.Drawing.Point(390, 142);
+            this.textBox5.Location = new System.Drawing.Point(475, 182);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 23);
             this.textBox5.TabIndex = 6;
@@ -770,7 +761,7 @@ namespace _2_laba_oop
             this.label8.BackColor = System.Drawing.SystemColors.MenuBar;
             this.label8.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label8.Location = new System.Drawing.Point(288, 123);
+            this.label8.Location = new System.Drawing.Point(373, 163);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 17);
             this.label8.TabIndex = 5;
@@ -782,7 +773,7 @@ namespace _2_laba_oop
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(492, 111);
+            this.pictureBox2.Location = new System.Drawing.Point(577, 151);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -794,7 +785,7 @@ namespace _2_laba_oop
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox4.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(282, 120);
+            this.textBox4.Location = new System.Drawing.Point(367, 160);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(208, 23);
             this.textBox4.TabIndex = 3;
@@ -808,7 +799,7 @@ namespace _2_laba_oop
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(282, 240);
+            this.label11.Location = new System.Drawing.Point(367, 280);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 21);
             this.label11.TabIndex = 2;
@@ -822,7 +813,7 @@ namespace _2_laba_oop
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(282, 192);
+            this.label10.Location = new System.Drawing.Point(367, 232);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 21);
             this.label10.TabIndex = 2;
@@ -836,7 +827,7 @@ namespace _2_laba_oop
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(118, 96);
+            this.label13.Location = new System.Drawing.Point(203, 136);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 21);
             this.label13.TabIndex = 2;
@@ -850,7 +841,7 @@ namespace _2_laba_oop
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(19, 96);
+            this.label12.Location = new System.Drawing.Point(104, 136);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 21);
             this.label12.TabIndex = 2;
@@ -864,7 +855,7 @@ namespace _2_laba_oop
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(282, 96);
+            this.label7.Location = new System.Drawing.Point(367, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 21);
             this.label7.TabIndex = 2;
@@ -894,7 +885,7 @@ namespace _2_laba_oop
             this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(50, 164);
+            this.button8.Location = new System.Drawing.Point(50, 214);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(170, 60);
             this.button8.TabIndex = 5;
@@ -905,7 +896,7 @@ namespace _2_laba_oop
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(177, 115);
+            this.textBox11.Location = new System.Drawing.Point(177, 165);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(47, 23);
             this.textBox11.TabIndex = 3;
@@ -917,7 +908,7 @@ namespace _2_laba_oop
             this.label19.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label19.Location = new System.Drawing.Point(246, 60);
+            this.label19.Location = new System.Drawing.Point(246, 110);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(24, 30);
             this.label19.TabIndex = 2;
@@ -929,7 +920,7 @@ namespace _2_laba_oop
             this.label20.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label20.Location = new System.Drawing.Point(6, 110);
+            this.label20.Location = new System.Drawing.Point(6, 160);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(160, 30);
             this.label20.TabIndex = 2;
@@ -941,7 +932,7 @@ namespace _2_laba_oop
             this.label18.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(0, 60);
+            this.label18.Location = new System.Drawing.Point(0, 110);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(224, 30);
             this.label18.TabIndex = 2;
@@ -952,7 +943,7 @@ namespace _2_laba_oop
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label17.Location = new System.Drawing.Point(288, 388);
+            this.label17.Location = new System.Drawing.Point(288, 438);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 15);
             this.label17.TabIndex = 1;
@@ -962,7 +953,7 @@ namespace _2_laba_oop
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox1.Location = new System.Drawing.Point(292, 37);
+            this.richTextBox1.Location = new System.Drawing.Point(292, 87);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(279, 297);
             this.richTextBox1.TabIndex = 0;
@@ -1125,78 +1116,6 @@ namespace _2_laba_oop
             this.textBoxLoginRegistration.Size = new System.Drawing.Size(100, 23);
             this.textBoxLoginRegistration.TabIndex = 0;
             // 
-            // panelTouristName
-            // 
-            this.panelTouristName.Controls.Add(this.button7);
-            this.panelTouristName.Controls.Add(this.label28);
-            this.panelTouristName.Controls.Add(this.label27);
-            this.panelTouristName.Controls.Add(this.label26);
-            this.panelTouristName.Controls.Add(this.textBox14);
-            this.panelTouristName.Controls.Add(this.textBox13);
-            this.panelTouristName.Controls.Add(this.textBox12);
-            this.panelTouristName.Location = new System.Drawing.Point(168, 80);
-            this.panelTouristName.Name = "panelTouristName";
-            this.panelTouristName.Size = new System.Drawing.Size(610, 421);
-            this.panelTouristName.TabIndex = 8;
-            this.panelTouristName.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTouristName_Paint);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(237, 304);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Submit";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(131, 227);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(28, 15);
-            this.label28.TabIndex = 5;
-            this.label28.Text = "Age";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(131, 176);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(54, 15);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Surname";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(130, 129);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(39, 15);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "Name";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(219, 220);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 23);
-            this.textBox14.TabIndex = 2;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(219, 168);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 23);
-            this.textBox13.TabIndex = 1;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(219, 119);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 23);
-            this.textBox12.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1204,15 +1123,14 @@ namespace _2_laba_oop
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
             this.Controls.Add(this.panelLogin);
-            this.Controls.Add(this.panelTouristName);
             this.Controls.Add(this.panelRegistration);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelPay);
             this.Controls.Add(this.panelTitle);
-            this.Controls.Add(this.panelPlane);
             this.Controls.Add(this.panelInfo);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelPlane);
+            this.Controls.Add(this.panelPay);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -1239,8 +1157,6 @@ namespace _2_laba_oop
             this.panelLogin.PerformLayout();
             this.panelRegistration.ResumeLayout(false);
             this.panelRegistration.PerformLayout();
-            this.panelTouristName.ResumeLayout(false);
-            this.panelTouristName.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1325,14 +1241,6 @@ namespace _2_laba_oop
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration2;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration1;
         private System.Windows.Forms.TextBox textBoxLoginRegistration;
-        private System.Windows.Forms.Panel panelTouristName;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
     }
 }
 

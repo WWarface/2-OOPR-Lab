@@ -19,7 +19,7 @@ namespace _2_laba_oop
         DataContext db;
         Tourist1 GlobalTourist;
         User GlobalUser;
-        int UserID;
+        //int UserID;
         public Form1()
         {
             GlobalTourist = new Tourist1();
@@ -87,21 +87,28 @@ namespace _2_laba_oop
         private void button5_Click(object sender, EventArgs e)/////////Menu registr
         {
             button5.Enabled = false;
-            if (textBox1.Text!=""&& textBox2.Text != ""&& textBox2.Text != "")
+            if (textBox1.Text!=""&& textBox2.Text != ""&& textBox3.Text != "")
             {
-                GlobalTourist.Name = textBox1.Text;
-                GlobalTourist.Surname = textBox2.Text;
-                GlobalTourist.Age = Int32.Parse(textBox3.Text);
-                Tourist sanya = new Tourist(textBox1.Text, textBox2.Text, Int32.Parse(textBox3.Text));
-                button2.Enabled = true;
-                button3.Enabled = true;
-                //////////////////////
-                ///
-                GlobalTourist = new Tourist1(textBox1.Text, textBox2.Text, Int16.Parse(textBox3.Text));
-                /////////////////////
-                sanya.WriteData("info_Tourist.txt");
-                label13.Text = Convert.ToString(sanya.Card.MoneyCount);
-                buttonPurchase.Enabled = true;
+                GlobalTourist = new Tourist1
+                {
+                    Name = textBox1.Text,
+                    Surname = textBox2.Text,
+                    Age = Int32.Parse(textBox3.Text),
+                    Id = GlobalUser.Id
+                };
+                using (db = new DataContext())//Добавити туриста за айдішніком його акаунта
+                {
+                    db.Users.Add(GlobalUser);
+                    db.Tourists.Add(GlobalTourist);
+                    db.SaveChanges();
+                }
+
+                panelMenu.Visible = false;
+                panelLogin.Visible = true;////закрити меню НСА і відкрити логін меню
+                
+                //button2.Enabled = true;
+                //button3.Enabled = true;                            
+                //buttonPurchase.Enabled = true;
                 label8.Visible = true;
                 label9.Visible = true;
 
@@ -470,27 +477,44 @@ namespace _2_laba_oop
 
         }
 
-        private void buttonEnter_Click(object sender, EventArgs e)
+        private void buttonEnter_Click(object sender, EventArgs e)////основний логін
         {
-            using(db = new DataContext())
+            if (textBoxLogin.Text!=""&&maskedTextBoxPassword.Text!="")
             {
-                User c=null;
-                try
+                using (db = new DataContext())
                 {
-                  
-                    c = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text);
-                }
-                catch (Exception)
-                {
-                    return;
-                }
+                    User c = null;
+                    try
+                    {
 
-                if (maskedTextBoxPassword.Text == c.Password && c != null)
-                {
-                    panelLogin.Visible = false;
-                    panelTouristName.Visible = true;
+                        c = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text);
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+
+                    if (c != null&&maskedTextBoxPassword.Text == c.Password)
+                    {
+                        if (c.Tourist1 != null)
+                        {
+                            foreach (var item in this.Controls)
+                            {
+                                if (item is Panel)
+                                {
+                                    ((Panel)item).Visible = false;
+                                }
+                            }
+                            panelTitle.Visible = true;/////Це дві панелі управління(верхня і ліва)
+                            panel1.Visible = true;
+                        }
+                        return;/////Проблема в том, що якщо в нас є 1 екземпляр user і в той же час
+                               /////немає туриста, то при спробі входу до паним акаунта в нас нічого не буде
+                        ///(це було обробленно в цьому коді),але як прив'язати до цього акаунта туриста
+                    }
                 }
             }
+            
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -508,17 +532,25 @@ namespace _2_laba_oop
                     MessageBox.Show("Password are not the same");
                     return;
                 }
-                User user = new User {Login = textBoxLoginRegistration.Text, Password = maskedTextBoxPasswordRegistration1.Text };
-                using (db = new DataContext())
-                {
-                    db.Users.Add(user);
-                    db.SaveChanges();
-                }
+                GlobalUser = new User {Login = textBoxLoginRegistration.Text, Password = maskedTextBoxPasswordRegistration1.Text };
+                //using (db = new DataContext())
+                //{
+                //    db.Users.Add(user);
+                //    db.SaveChanges();
+                //}
                 panelRegistration.Visible = false;
-                panelLogin.Visible = true;
-                UserID = user.Id;
-
+                panelMenu.Visible = true;
+                //UserID = user.Id;
             }
+        }///Тут можливо є сенс поки не добавляти в БД юзера, а добавити його вже тоді, коли буде турист
+        /// Бо єслі я добавив юзера а случайно не добавив туриста, то можуть бути проблеми
+        /// А так можна зробити глобального юзера якого ми потім будемо додавати в БД
+
+        private void buttonSubmitNameAge_Click(object sender, EventArgs e)
+        {
+           
+            
+
         }
 
         private void panelTouristName_Paint(object sender, PaintEventArgs e)
