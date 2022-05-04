@@ -22,6 +22,6 @@ namespace _2_laba_oop
 
         public int TouristId { get; set; }
 
-        public Tourist1 Tourist { get; set; }
+        public virtual Tourist1 Tourist { get; set; }
     }
 }

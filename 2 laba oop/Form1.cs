@@ -46,9 +46,6 @@ namespace _2_laba_oop
                   else
                       e.Handled = true;
               };
-
-            //db = new DataContext();
-            //db.Tourists.Load();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -533,18 +530,6 @@ namespace _2_laba_oop
         }///Тут можливо є сенс поки не добавляти в БД юзера, а добавити його вже тоді, коли буде турист
         /// Бо єслі я добавив юзера а случайно не добавив туриста, то можуть бути проблеми
         /// А так можна зробити глобального юзера якого ми потім будемо додавати в БД
-
-        private void buttonSubmitNameAge_Click(object sender, EventArgs e)
-        {
-           
-            
-
-        }
-
-        private void panelTouristName_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {

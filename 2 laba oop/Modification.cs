@@ -16,10 +16,12 @@ namespace _2_laba_oop
         
 
         Form1 form1=null;
+        List<PictureBox> pictures;
         public Modification(Form1 frm1)
         {
             InitializeComponent();
             form1 = frm1;
+            pictures = new List<PictureBox>() { pictureBox1, pictureBox2, pictureBox3 };
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -59,6 +61,15 @@ namespace _2_laba_oop
                 labelName.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Name.ToString();
                 labelSurname.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Surname.ToString();
                 labelAge.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Age.ToString();
+
+                Tourist1 tourist = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text);
+                ICollection<CreditCard> m = tourist.Cards;
+                int count = m.Count;
+                if (count > 3) count = 3;
+                for (int i = 0; i < count; i++)
+                {
+                    pictures[i].Visible = true;
+                }
             }
         }
         private void buttonApplyPassword_Click(object sender, EventArgs e)
@@ -128,7 +139,34 @@ namespace _2_laba_oop
                     TouristId = user.Tourist1.Id
                 };
 
+                if (db.Cards.FirstOrDefault(p=>p.Number==card.Number)==null)///означає, що немає більше такої картки
+                {                    
+                    db.Cards.Add(card);
+                    db.SaveChanges();                    
+                }
+
+                ICollection<CreditCard> m = user.Tourist1.Cards;
+                int count = m.Count;
+                if (count > 3) count = 3;
+                for (int i = 0; i < count; i++)
+                {
+                    pictures[i].Visible = true;
+                }
             }
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+            using(var db =new DataContext()) 
+            {
+                //ICollection<CreditCard> m = db.Cards.ToList();
+                //int count = m.Count;
+                //for (int i = 0; i < count; i++)
+                //{
+                //    pictures[i].Visible = true;
+                //}
+            }
+            
         }
     }
 }

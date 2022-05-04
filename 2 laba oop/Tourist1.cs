@@ -29,7 +29,7 @@ namespace _2_laba_oop
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public ICollection<CreditCard> Cards { get; set; }
+        public virtual ICollection<CreditCard> Cards { get; set; }
         public ICollection<Voucher1> Vouchers { get; set; }//navigation prop
         public int Age { get; set; }
 
