@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2_laba_oop
 {
-    class Tourist1
+    public class Tourist1
     {
 
         public Tourist1()
@@ -24,7 +24,6 @@ namespace _2_laba_oop
         }
 
         [ForeignKey("User")]
-        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -33,7 +32,7 @@ namespace _2_laba_oop
         public int Age { get; set; }
 
 
-        public User User { get; set; }//navigation prop
+        public virtual User User { get; set; }//navigation prop
 
         //public Voucher Voucher { get; set; }////navigation prop
     }

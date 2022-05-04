@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2_laba_oop
 {
-    class User
+    public class User
     {
         [Key]
         public int Id { get; set; }
@@ -17,7 +17,6 @@ namespace _2_laba_oop
 
         public string Password { get; set; }
 
-        //[Required]
-        public Tourist1 Tourist1 { get; set; }
+        public virtual Tourist1 Tourist1 { get; set; }
     }
 }

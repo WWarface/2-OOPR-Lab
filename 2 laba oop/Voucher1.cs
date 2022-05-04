@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2_laba_oop
 {
-    class Voucher1
+    public class Voucher1
     {
         public int Id { get; set; }
 

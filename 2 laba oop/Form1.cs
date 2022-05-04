@@ -94,7 +94,8 @@ namespace _2_laba_oop
                     Name = textBox1.Text,
                     Surname = textBox2.Text,
                     Age = Int32.Parse(textBox3.Text),
-                    Id = GlobalUser.Id
+                    Id = GlobalUser.Id,
+                    User = GlobalUser
                 };
                 using (db = new DataContext())//Добавити туриста за айдішніком його акаунта
                 {
@@ -492,7 +493,7 @@ namespace _2_laba_oop
                     catch (Exception)
                     {
                         return;
-                    }
+                    }            
 
                     if (c != null&&maskedTextBoxPassword.Text == c.Password)
                     {

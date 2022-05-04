@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2_laba_oop
 {
-    class Destination
+    public class Destination
     {
         public int Id { get; set; }
 
