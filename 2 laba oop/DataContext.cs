@@ -17,5 +17,7 @@ namespace _2_laba_oop
         public DbSet<Voucher1> Vouchers { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<CreditCard> Cards { get; set; }
     }
 }

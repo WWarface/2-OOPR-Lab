@@ -61,10 +61,8 @@ namespace _2_laba_oop
                 labelAge.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Age.ToString();
             }
         }
-
         private void buttonApplyPassword_Click(object sender, EventArgs e)
         {
-
             if (textBoxCurrentPassword.Text!=""&&textBoxNewPassword.Text!=""&&
                 textBoxAgainPassword.Text!="")
             {
@@ -88,13 +86,49 @@ namespace _2_laba_oop
                             textBoxAgainPassword.Clear();
                             textBoxCurrentPassword.Clear();
                             textBoxNewPassword.Clear();
-                        }
-
-                        
+                        }                        
                     }
                 }
+            }            
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            using(DataContext db=new DataContext())
+            {
+                User user=db.Users.FirstOrDefault(p=>p.Login==form1.textBoxLogin.Text);
+                Tourist1 tourist = user.Tourist1;
+                if (user !=null)
+                {
+                    DialogResult result= MessageBox.Show("Delete your account", "Are you sure?",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+                    if (result==DialogResult.Yes)
+                    {
+                        db.Tourists.Remove(tourist);
+                        db.Users.Remove(user);
+                        db.SaveChanges();
+                        Application.Exit();
+                        
+                    }                    
+                }
+
             }
-            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using(DataContext db=new DataContext())
+            {
+                User user = db.Users.FirstOrDefault(p => p.Login == form1.textBoxLogin.Text);
+
+                CreditCard card = new CreditCard
+                {
+                    Number = textBoxCardNumber.Text,
+                    CVC = Int32.Parse(textBoxCVC.Text),
+                    TouristId = user.Tourist1.Id
+                };
+
+            }
         }
     }
 }

@@ -24,7 +24,6 @@ namespace _2_laba_oop
         {
             GlobalTourist = new Tourist1();
             InitializeComponent();
-            panel1.BackColor = Color.FromArgb(0, 115, 230);
             panelLogo.BackColor = Color.FromArgb(0, 184, 230);
             panelTitle.BackColor = Color.FromArgb(0, 204, 255);
             panelMenu.Visible = false;
@@ -36,9 +35,6 @@ namespace _2_laba_oop
             panelPay.BackColor = Color.FromArgb(0, 102, 204);
             buttonClose.Enabled = false;
             buttonClose.Visible = false;
-            button2.Enabled = false;
-            button3.Enabled = false;
-            button4.Enabled = false;
             textBox4.MaxLength = 19;
             textBox5.MaxLength = 3;
             textBox9.MaxLength = 2;
@@ -57,7 +53,6 @@ namespace _2_laba_oop
         private void button1_Click(object sender, EventArgs e)
         {
             button2.BackColor = Color.Transparent;
-            button1.BackColor = Color.FromArgb(0, 0, 128);
             button3.BackColor = Color.Transparent;
             button4.BackColor = Color.Transparent;
             panelMenu.Visible = true;
@@ -74,7 +69,6 @@ namespace _2_laba_oop
             panelInfo.Visible = false;
             buttonClose.Enabled = false;
             buttonClose.Visible = false;
-            button1.BackColor = Color.Transparent;
             button4.BackColor = Color.Transparent;
             button3.BackColor = Color.Transparent;
             button2.BackColor = Color.Transparent;
@@ -106,10 +100,7 @@ namespace _2_laba_oop
 
                 panelMenu.Visible = false;
                 panelLogin.Visible = true;////закрити меню НСА і відкрити логін меню
-                
-                //button2.Enabled = true;
-                //button3.Enabled = true;                            
-                //buttonPurchase.Enabled = true;
+
                 label8.Visible = true;
                 label9.Visible = true;
 
@@ -128,7 +119,6 @@ namespace _2_laba_oop
             panelPlane.Visible = true;
             panelInfo.Visible = false;
             panelPay.Visible = false;
-            button1.BackColor = Color.Transparent;
             button2.BackColor = Color.FromArgb(0, 0, 128);
             button3.BackColor = Color.Transparent;
             button4.BackColor = Color.Transparent;
@@ -201,7 +191,6 @@ namespace _2_laba_oop
                 panelInfo.Visible = false;
                 panelMenu.Visible = false;
                 button4.Enabled = true;
-                button1.BackColor = Color.Transparent;
                 button4.BackColor = Color.FromArgb(0, 0, 128);
                 button3.BackColor = Color.Transparent;
                 button2.BackColor = Color.Transparent;
@@ -291,7 +280,6 @@ namespace _2_laba_oop
             panelPlane.Visible = false;
             panelPay.Visible = true;
             panelInfo.Visible = false;
-            button1.BackColor = Color.Transparent;
             button4.BackColor = Color.FromArgb(0, 0, 128);
             button3.BackColor = Color.Transparent;
             button2.BackColor = Color.Transparent;
@@ -312,7 +300,6 @@ namespace _2_laba_oop
 
             Tourist clone = new Tourist();
             Tourist.Count--;
-            clone.ReadData();///// card number need to be compered as 1234 1234 1234 1234 with blanks
             if (clone.Name==textBox6.Text&&clone.Surname==textBox7.Text&&clone.Card.Number==textBox4.Text&&clone.Card.CVC==Int16.Parse(textBox5.Text))
             {
                 TouristTravelInfo info = new TouristTravelInfo();
@@ -364,8 +351,6 @@ namespace _2_laba_oop
                 radioButton6.Checked = false;
                 radioButton7.Checked = false;
                 radioButton8.Checked = false;
-                clone.Card.PayHistory++;
-               ////// clone.WriteData(Tourist.Path);
             }
         }
 
@@ -508,11 +493,12 @@ namespace _2_laba_oop
                             panelTitle.Visible = true;/////Це дві панелі управління(верхня і ліва)
                             panel1.Visible = true;
                             buttonProfile.Visible = true;
-                            buttonProfile.Text = c.Tourist1.Name;                                                        
+                            buttonProfile.Text = c.Tourist1.Name;
+                            button2.Enabled = true;
+                            button3.Enabled = true;
+                            button4.Enabled = true;
                         }
-                        return;/////Проблема в том, що якщо в нас є 1 екземпляр user і в той же час
-                               /////немає туриста, то при спробі входу до паним акаунта в нас нічого не буде
-                        ///(це було обробленно в цьому коді),але як прив'язати до цього акаунта туриста
+                        return;
                     }
                 }
             }

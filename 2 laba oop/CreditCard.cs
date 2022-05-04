@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 
 namespace _2_laba_oop
 {
-    public delegate void CardHandler();
+
     public class CreditCard
     {
-        public CreditCard(string num, int cvc, double money)
+        public CreditCard()
         {
-            Number = num;
-            CVC = cvc;
-            MoneyCount = money;
-            Bonus = 0.1;
+            Random rnd = new Random();
+            MoneyCount = rnd.Next(2500, 4500);
         }
+        public int Id { get; set; }
 
-        public readonly double Bonus;
-
-        private CardHandler CardBooster;
         public string Number { get; set; }
         public int CVC { get; set; }
         public double MoneyCount { get; set; }
 
-        public int PayHistory { get; set; }
+        public int TouristId { get; set; }
 
+        public Tourist1 Tourist { get; set; }
     }
 }
