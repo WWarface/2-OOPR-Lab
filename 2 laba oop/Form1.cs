@@ -17,8 +17,8 @@ namespace _2_laba_oop
     public partial class Form1 : Form
     {
         DataContext db;
-        Tourist1 GlobalTourist;
-        User GlobalUser;
+        protected internal Tourist1 GlobalTourist;
+        public User GlobalUser;
         //int UserID;
         public Form1()
         {
@@ -494,7 +494,6 @@ namespace _2_laba_oop
                     {
                         return;
                     }            
-
                     if (c != null&&maskedTextBoxPassword.Text == c.Password)
                     {
                         if (c.Tourist1 != null)
@@ -508,6 +507,8 @@ namespace _2_laba_oop
                             }
                             panelTitle.Visible = true;/////Це дві панелі управління(верхня і ліва)
                             panel1.Visible = true;
+                            buttonProfile.Visible = true;
+                            buttonProfile.Text = c.Tourist1.Name;                                                        
                         }
                         return;/////Проблема в том, що якщо в нас є 1 екземпляр user і в той же час
                                /////немає туриста, то при спробі входу до паним акаунта в нас нічого не буде
@@ -557,6 +558,13 @@ namespace _2_laba_oop
         private void panelTouristName_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            Modification mform = new Modification(this);
+
+            mform.ShowDialog();
         }
     }
 }

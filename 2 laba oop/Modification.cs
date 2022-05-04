@@ -29,7 +29,7 @@ namespace _2_laba_oop
                 Tourist1 sanya = null;
                 using (var db =new DataContext())///////UPDATE
                 {
-                    sanya = db.Tourists.FirstOrDefault(p => p.Name == form1.textBox1.Text);
+                    sanya = db.Tourists.FirstOrDefault(p => p.User.Login==form1.textBoxLogin.Text);
                     if (textName.Text != "")
                     {
                         sanya.Name = textName.Text;
@@ -44,13 +44,57 @@ namespace _2_laba_oop
                     }
                     db.Entry(sanya).State = EntityState.Modified;
                     db.SaveChanges();
+                    labelName.Text = sanya.Name;
+                    labelSurname.Text = sanya.Surname;
+                    labelAge.Text =(sanya.Age).ToString();
+                    form1.buttonProfile.Text = sanya.Name;
                 }
             }
         }
 
         private void Modification_Load(object sender, EventArgs e)
         {
+            using (var db = new DataContext())///read
+            {
+                labelName.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Name.ToString();
+                labelSurname.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Surname.ToString();
+                labelAge.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Age.ToString();
+            }
+        }
 
+        private void buttonApplyPassword_Click(object sender, EventArgs e)
+        {
+
+            if (textBoxCurrentPassword.Text!=""&&textBoxNewPassword.Text!=""&&
+                textBoxAgainPassword.Text!="")
+            {
+                using (var db = new DataContext())///read
+                {
+                    User user = new User();
+                    user = db.Users.FirstOrDefault(p => p.Login == form1.textBoxLogin.Text);
+                    if (textBoxCurrentPassword.Text==user.Password&&
+                        textBoxNewPassword.Text==textBoxAgainPassword.Text)
+                    {
+                        DialogResult dres;
+
+                        dres = MessageBox.Show("Are you sure?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+                        if (dres==DialogResult.OK)
+                        {
+                            user.Password = textBoxNewPassword.Text;
+
+                            db.Entry(user).State = EntityState.Modified;
+                            db.SaveChanges();
+                            textBoxAgainPassword.Clear();
+                            textBoxCurrentPassword.Clear();
+                            textBoxNewPassword.Clear();
+                        }
+
+                        
+                    }
+                }
+            }
+            
         }
     }
 }

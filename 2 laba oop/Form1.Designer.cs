@@ -39,11 +39,11 @@ namespace _2_laba_oop
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.buttonModify = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -250,6 +250,7 @@ namespace _2_laba_oop
             // 
             // panelTitle
             // 
+            this.panelTitle.Controls.Add(this.buttonProfile);
             this.panelTitle.Controls.Add(this.buttonClose);
             this.panelTitle.Controls.Add(this.label1);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -257,6 +258,23 @@ namespace _2_laba_oop
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(609, 80);
             this.panelTitle.TabIndex = 2;
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonProfile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProfile.Location = new System.Drawing.Point(439, 0);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(170, 80);
+            this.buttonProfile.TabIndex = 4;
+            this.buttonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Visible = false;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // buttonClose
             // 
@@ -282,7 +300,7 @@ namespace _2_laba_oop
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(265, 27);
+            this.label1.Location = new System.Drawing.Point(232, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 32);
             this.label1.TabIndex = 0;
@@ -302,7 +320,6 @@ namespace _2_laba_oop
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelMenu.Controls.Add(this.buttonModify);
             this.panelMenu.Controls.Add(this.button5);
             this.panelMenu.Controls.Add(this.textBox3);
             this.panelMenu.Controls.Add(this.textBox2);
@@ -315,16 +332,6 @@ namespace _2_laba_oop
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(609, 422);
             this.panelMenu.TabIndex = 4;
-            // 
-            // buttonModify
-            // 
-            this.buttonModify.Location = new System.Drawing.Point(456, 42);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(131, 54);
-            this.buttonModify.TabIndex = 4;
-            this.buttonModify.Text = "button7";
-            this.buttonModify.UseVisualStyleBackColor = true;
-            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // button5
             // 
@@ -1223,14 +1230,11 @@ namespace _2_laba_oop
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button buttonModify;
         protected internal System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxPassword;
-        private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panelRegistration;
@@ -1241,6 +1245,9 @@ namespace _2_laba_oop
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration2;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPasswordRegistration1;
         private System.Windows.Forms.TextBox textBoxLoginRegistration;
+        protected internal System.Windows.Forms.TextBox textBoxLogin;
+        protected internal System.Windows.Forms.Button buttonProfile;
+        protected internal System.Windows.Forms.MaskedTextBox maskedTextBoxPassword;
     }
 }
 
