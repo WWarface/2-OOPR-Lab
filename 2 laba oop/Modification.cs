@@ -15,13 +15,15 @@ namespace _2_laba_oop
     {
         
 
-        Form1 form1=null;
+        Form1 form1=null;   
         List<PictureBox> pictures;
+        List<Panel> panels;
         public Modification(Form1 frm1)
         {
             InitializeComponent();
             form1 = frm1;
             pictures = new List<PictureBox>() { pictureBox1, pictureBox2, pictureBox3 };
+            panels = new List<Panel>() { panel1, panel2, panel3 };
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -63,12 +65,35 @@ namespace _2_laba_oop
                 labelAge.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Age.ToString();
 
                 Tourist1 tourist = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text);
-                ICollection<CreditCard> m = tourist.Cards;
+                List<CreditCard> m = tourist.Cards.ToList();
                 int count = m.Count;
                 if (count > 3) count = 3;
                 for (int i = 0; i < count; i++)
                 {
                     pictures[i].Visible = true;
+                    panels[i].Visible = true;
+                    foreach (var item in panels[i].Controls)
+                    {
+                        if (item is Label)
+                        {
+                            if (((Label)item).Name==labelCardNum1.Name|| ((Label)item).Name == labelCardNum2.Name
+                                || ((Label)item).Name == labelCardNum3.Name)
+                            {
+                                ((Label)item).Text = m[i].Number;
+                            }
+                            if (((Label)item).Name == labelCardCVC1.Name || ((Label)item).Name == labelCardCVC2.Name
+                                || ((Label)item).Name == labelCardCVC3.Name)
+                            {
+                                ((Label)item).Text = m[i].CVC.ToString();
+                            }
+                            if (((Label)item).Name == labelCardMoney1.Name || ((Label)item).Name == labelCardMoney2.Name
+                                || ((Label)item).Name == labelCardMoney3.Name)
+                            {
+                                ((Label)item).Text = m[i].MoneyCount.ToString()+"$";
+                            }
+                            
+                        }
+                    }
                 }
             }
         }
@@ -145,12 +170,36 @@ namespace _2_laba_oop
                     db.SaveChanges();                    
                 }
 
-                ICollection<CreditCard> m = user.Tourist1.Cards;
+                List<CreditCard> m = user.Tourist1.Cards.ToList();
                 int count = m.Count;
                 if (count > 3) count = 3;
+
                 for (int i = 0; i < count; i++)
                 {
                     pictures[i].Visible = true;
+                    panels[i].Visible = true;
+                    foreach (var item in panels[i].Controls)
+                    {
+                        if (item is Label)
+                        {
+                            if (((Label)item).Name == labelCardNum1.Name || ((Label)item).Name == labelCardNum2.Name
+                                || ((Label)item).Name == labelCardNum3.Name)
+                            {
+                                ((Label)item).Text = m[i].Number;
+                            }
+                            if (((Label)item).Name == labelCardCVC1.Name || ((Label)item).Name == labelCardCVC2.Name
+                                || ((Label)item).Name == labelCardCVC3.Name)
+                            {
+                                ((Label)item).Text = m[i].CVC.ToString();
+                            }
+                            if (((Label)item).Name == labelCardMoney1.Name || ((Label)item).Name == labelCardMoney2.Name
+                                || ((Label)item).Name == labelCardMoney3.Name)
+                            {
+                                ((Label)item).Text = m[i].MoneyCount.ToString() + "$";
+                            }
+
+                        }
+                    }
                 }
             }
         }

@@ -31,7 +31,6 @@ namespace _2_laba_oop
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -70,14 +69,13 @@ namespace _2_laba_oop
             this.label14 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelPay = new System.Windows.Forms.Panel();
+            this.comboBoxCards = new System.Windows.Forms.ComboBox();
             this.buttonPurchase = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -107,6 +105,8 @@ namespace _2_laba_oop
             this.maskedTextBoxPasswordRegistration2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPasswordRegistration1 = new System.Windows.Forms.MaskedTextBox();
             this.textBoxLoginRegistration = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.labelVoucherPrice = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -126,7 +126,6 @@ namespace _2_laba_oop
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.panelLogo);
@@ -135,25 +134,6 @@ namespace _2_laba_oop
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(145, 502);
             this.panel1.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 200);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 60);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Purchase";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -425,7 +405,6 @@ namespace _2_laba_oop
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(53, 23);
             this.textBox10.TabIndex = 6;
-            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
             // 
             // textBox8
             // 
@@ -645,17 +624,18 @@ namespace _2_laba_oop
             // panelPay
             // 
             this.panelPay.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panelPay.Controls.Add(this.comboBoxCards);
             this.panelPay.Controls.Add(this.buttonPurchase);
             this.panelPay.Controls.Add(this.textBox7);
             this.panelPay.Controls.Add(this.textBox6);
             this.panelPay.Controls.Add(this.label9);
             this.panelPay.Controls.Add(this.textBox5);
-            this.panelPay.Controls.Add(this.label8);
             this.panelPay.Controls.Add(this.pictureBox2);
-            this.panelPay.Controls.Add(this.textBox4);
             this.panelPay.Controls.Add(this.label11);
             this.panelPay.Controls.Add(this.label10);
+            this.panelPay.Controls.Add(this.labelVoucherPrice);
             this.panelPay.Controls.Add(this.label13);
+            this.panelPay.Controls.Add(this.label26);
             this.panelPay.Controls.Add(this.label12);
             this.panelPay.Controls.Add(this.label7);
             this.panelPay.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -664,6 +644,17 @@ namespace _2_laba_oop
             this.panelPay.Size = new System.Drawing.Size(634, 422);
             this.panelPay.TabIndex = 6;
             this.panelPay.Click += new System.EventHandler(this.panelPay_Click);
+            // 
+            // comboBoxCards
+            // 
+            this.comboBoxCards.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBoxCards.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCards.FormattingEnabled = true;
+            this.comboBoxCards.Location = new System.Drawing.Point(295, 119);
+            this.comboBoxCards.Name = "comboBoxCards";
+            this.comboBoxCards.Size = new System.Drawing.Size(208, 23);
+            this.comboBoxCards.TabIndex = 10;
+            this.comboBoxCards.SelectedIndexChanged += new System.EventHandler(this.comboBoxCards_SelectedIndexChanged);
             // 
             // buttonPurchase
             // 
@@ -725,21 +716,6 @@ namespace _2_laba_oop
             this.textBox5.Click += new System.EventHandler(this.textBox5_Click);
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label8.Location = new System.Drawing.Point(301, 123);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 17);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "1234 1234 1234 1234";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -750,18 +726,6 @@ namespace _2_laba_oop
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(295, 120);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 23);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress_1);
             // 
             // label11
             // 
@@ -798,7 +762,7 @@ namespace _2_laba_oop
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(131, 96);
+            this.label13.Location = new System.Drawing.Point(150, 96);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(70, 21);
             this.label13.TabIndex = 2;
@@ -1087,6 +1051,35 @@ namespace _2_laba_oop
             this.textBoxLoginRegistration.Size = new System.Drawing.Size(100, 23);
             this.textBoxLoginRegistration.TabIndex = 0;
             // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label26.Location = new System.Drawing.Point(32, 148);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(115, 21);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Voucher price";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelVoucherPrice
+            // 
+            this.labelVoucherPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelVoucherPrice.AutoSize = true;
+            this.labelVoucherPrice.BackColor = System.Drawing.Color.Transparent;
+            this.labelVoucherPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelVoucherPrice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelVoucherPrice.Location = new System.Drawing.Point(150, 148);
+            this.labelVoucherPrice.Name = "labelVoucherPrice";
+            this.labelVoucherPrice.Size = new System.Drawing.Size(70, 21);
+            this.labelVoucherPrice.TabIndex = 2;
+            this.labelVoucherPrice.Text = "Balance";
+            this.labelVoucherPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelVoucherPrice.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1104,7 +1097,6 @@ namespace _2_laba_oop
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -1135,7 +1127,6 @@ namespace _2_laba_oop
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panelTitle;
@@ -1164,9 +1155,7 @@ namespace _2_laba_oop
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panelPay;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
@@ -1210,6 +1199,9 @@ namespace _2_laba_oop
         protected internal System.Windows.Forms.TextBox textBoxLogin;
         protected internal System.Windows.Forms.Button buttonProfile;
         protected internal System.Windows.Forms.MaskedTextBox maskedTextBoxPassword;
+        private System.Windows.Forms.ComboBox comboBoxCards;
+        private System.Windows.Forms.Label labelVoucherPrice;
+        private System.Windows.Forms.Label label26;
     }
 }
 

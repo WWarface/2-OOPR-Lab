@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2_laba_oop
 {
-    public interface IAgencyInfo: INationable
+    public interface IAgencyInfo
     {
         string Label
         {

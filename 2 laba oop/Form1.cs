@@ -19,7 +19,9 @@ namespace _2_laba_oop
         DataContext db;
         protected internal Tourist1 GlobalTourist;
         public User GlobalUser;
-        //int UserID;
+        string CurrentDestination;
+        string CurrentFromCity;
+        public Agency agency;
         public Form1()
         {
             GlobalTourist = new Tourist1();
@@ -35,7 +37,6 @@ namespace _2_laba_oop
             panelPay.BackColor = Color.FromArgb(0, 102, 204);
             buttonClose.Enabled = false;
             buttonClose.Visible = false;
-            textBox4.MaxLength = 19;
             textBox5.MaxLength = 3;
             textBox9.MaxLength = 2;
             textBox8.MaxLength = 2;
@@ -51,7 +52,6 @@ namespace _2_laba_oop
         {
             button2.BackColor = Color.Transparent;
             button3.BackColor = Color.Transparent;
-            button4.BackColor = Color.Transparent;
             panelMenu.Visible = true;
             label1.Text = "MENU";
             buttonClose.Enabled = true;
@@ -66,13 +66,12 @@ namespace _2_laba_oop
             panelInfo.Visible = false;
             buttonClose.Enabled = false;
             buttonClose.Visible = false;
-            button4.BackColor = Color.Transparent;
             button3.BackColor = Color.Transparent;
             button2.BackColor = Color.Transparent;
         }
 
 
-        public Agency agency = new Agency();
+
 
 
         private void button5_Click(object sender, EventArgs e)/////////Menu registr
@@ -98,7 +97,6 @@ namespace _2_laba_oop
                 panelMenu.Visible = false;
                 panelLogin.Visible = true;////закрити меню НСА і відкрити логін меню
 
-                label8.Visible = true;
                 label9.Visible = true;
 
             }   
@@ -118,7 +116,6 @@ namespace _2_laba_oop
             panelPay.Visible = false;
             button2.BackColor = Color.FromArgb(0, 0, 128);
             button3.BackColor = Color.Transparent;
-            button4.BackColor = Color.Transparent;
         }
 
 
@@ -178,7 +175,7 @@ namespace _2_laba_oop
             label6.Text = "18000";
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)// accept button
         {
             if ((radioButton1.Checked|| radioButton2.Checked || radioButton3.Checked || radioButton4.Checked)&& (radioButton5.Checked || radioButton6.Checked || radioButton7.Checked || radioButton8.Checked)&&textBox8.Text!=""&&textBox9.Text!="" && textBox10.Text != "")
             {
@@ -187,8 +184,6 @@ namespace _2_laba_oop
                 panelPay.Visible = true;
                 panelInfo.Visible = false;
                 panelMenu.Visible = false;
-                button4.Enabled = true;
-                button4.BackColor = Color.FromArgb(0, 0, 128);
                 button3.BackColor = Color.Transparent;
                 button2.BackColor = Color.Transparent;
                 TouristTravelInfo info = new TouristTravelInfo();
@@ -204,7 +199,7 @@ namespace _2_laba_oop
                         if (rbControl.Checked)
                         {
                             info.From = rbControl.Text;
-
+                            CurrentFromCity= rbControl.Text;
                         }
                     }
                 }
@@ -219,6 +214,7 @@ namespace _2_laba_oop
                         if (rbControl.Checked)
                         {
                             info.ToCountry = rbControl.Text;
+                            CurrentDestination= rbControl.Text;
                         }
                     }
                 }
@@ -234,30 +230,36 @@ namespace _2_laba_oop
                     var test = from b in db.Tourists
                                where b.Name.Equals(GlobalTourist.Name)
                                select b;
-                    //if (test.Count()==0)
-                    //{
-                    //    db.Tourists.Add(GlobalTourist);
-                    //    db.SaveChanges();
-                    //    User user = new User { Id = GlobalTourist.Id, Login = GlobalUser.Login, Password = GlobalUser.Password };
-                    //    db.Users.Add(user);
-                    //    db.SaveChanges();
-                    //}                   
-                    Voucher1 voucher1 = new Voucher1 { Price = info.Price, Destination = info.ToCountry,TouristId=GlobalTourist.Id, IsPaid = false };
-                    db.Vouchers.Add(voucher1);
-                    db.SaveChanges();
+                    User user = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text);
+                    Voucher1 voucher1 = new Voucher1
+                    {
+                        Price = info.Price,
+                        Destination = CurrentDestination,
+                        FromCity = CurrentFromCity,
+                        TouristId = user.Tourist1.Id,
+                        IsPaid = false
+                    };
+                    if (db.Vouchers.FirstOrDefault(p=>p.Destination==CurrentDestination&&p.FromCity==CurrentFromCity)==null)//добавляємо тільки 1 путівку
+                    {
+                        db.Vouchers.Add(voucher1);
+                        db.SaveChanges();
+                    }                    
+                    ICollection<CreditCard> cards = user.Tourist1.Cards;
+                    if (cards.Count!=0)
+                    {
+                        foreach (var item in cards)
+                        {
+                            bool itemExists = false;
+                            itemExists = comboBoxCards.Items.Contains(item.Number);             
+                            if (!itemExists) comboBoxCards.Items.Add(item.Number);
+                        }
+                    }                    
+                    else { comboBoxCards.Text = "No cards available"; };
                 }
-                info.WriteData("Tourist_Price.txt");///////////////
-            }
-        }
-
-        private void textBox4_Click(object sender, EventArgs e)
-        {
-            label8.Visible = false;
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            label8.Visible = false;
+                labelVoucherPrice.Visible = true;
+                labelVoucherPrice.Text = label6.Text+"$";
+                panelPay.Visible = true;
+            }          
         }
 
         private void textBox5_Click(object sender, EventArgs e)
@@ -277,14 +279,12 @@ namespace _2_laba_oop
             panelPlane.Visible = false;
             panelPay.Visible = true;
             panelInfo.Visible = false;
-            button4.BackColor = Color.FromArgb(0, 0, 128);
             button3.BackColor = Color.Transparent;
             button2.BackColor = Color.Transparent;
         }
 
         private void button7_Click(object sender, EventArgs e)///////////////Зчитування даних з бази 
         {
-            button5.Enabled = true;
             richTextBox1.Clear();
 
             Tourist1 sanya=null;
@@ -294,61 +294,33 @@ namespace _2_laba_oop
             }
 
 
-
-            Tourist clone = new Tourist();
-            Tourist.Count--;
-            if (clone.Name==textBox6.Text&&clone.Surname==textBox7.Text&&clone.Card.Number==textBox4.Text&&clone.Card.CVC==Int16.Parse(textBox5.Text))
+            using (var db = new DataContext())
             {
-                TouristTravelInfo info = new TouristTravelInfo();
-                info.ReadData();
-                clone.Card.MoneyCount = clone.Card.MoneyCount - info.Price;
-                if (clone.Card.MoneyCount<0)
+                if (comboBoxCards.SelectedItem != null&&
+                    db.Cards.FirstOrDefault(p=>p.Number == comboBoxCards.SelectedItem.ToString() &&
+                    p.Tourist.Name==textBox6.Text&& p.Tourist.Surname == textBox7.Text) !=null)// Перевірка валідності карти
                 {
-                    MessageBox.Show("Not enough money");
-                    clone.Card.MoneyCount = clone.Card.MoneyCount + info.Price;
-                }
-                MessageBox.Show("Your payment was successful");
-                buttonPurchase.Enabled = false;
-                label13.Text = Convert.ToString(clone.Card.MoneyCount);
-                clone.Voucher.Country = info.ToCountry;
-                clone.Voucher.Day = info.Day;
-                clone.Voucher.Duration = info.Duration;
-                agency.Add(clone);
-                Tourist1 sanya2 = null;
-                using (var db = new DataContext())
-                {
-                    sanya2 = db.Tourists.FirstOrDefault(x => x.Name == textBox1.Text);///Delete MUST BE REWORKED
-                    db.Users.Remove(sanya2.User);
-                    db.Tourists.Remove(sanya2);
-                    db.SaveChanges();
-                }
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
-                textBox7.Clear();
-                textBox8.Clear();
-                textBox9.Clear();
-                textBox10.Clear();
-
-                foreach (var c in this.Controls)
-                {
-                    if (c is RadioButton)
+                    CreditCard card = db.Cards.FirstOrDefault(p => p.Number == comboBoxCards.SelectedItem.ToString());
+                    
+                    Voucher1 voucher = db.Vouchers.FirstOrDefault(p => p.Destination == CurrentDestination && p.FromCity == CurrentFromCity);
+                    card.MoneyCount = card.MoneyCount - voucher.Price;
+                    if (card.MoneyCount < 0)
                     {
-                        ((RadioButton)c).Checked = false;
+                        MessageBox.Show("Not enough money");
+                        card.MoneyCount = card.MoneyCount + voucher.Price;
+                        return;
                     }
+                    MessageBox.Show("Your payment was successful");
+                    db.Entry(card).State = EntityState.Modified;
+                    db.Vouchers.Remove(voucher);
+                    db.SaveChanges();
+                    label13.Text = card.MoneyCount.ToString();// В залежності від вибраного комбобоксу, показувати к-ть грошей в 13лейбл
+                    agency = new Agency();
+                    Tourist1 tourist = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text).Tourist1;
+                    agency.Add(tourist);
                 }
-                radioButton1.Checked = false;
-                radioButton2.Checked = false;
-                radioButton3.Checked = false;
-                radioButton4.Checked = false;
-                radioButton5.Checked = false;
-                radioButton6.Checked = false;
-                radioButton7.Checked = false;
-                radioButton8.Checked = false;
             }
+            
         }
 
         private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
@@ -392,16 +364,6 @@ namespace _2_laba_oop
                 ShowingList.Init(this);
             
         }
-
-        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
-       {
-            // if (Char.IsDigit(e.KeyChar)) return;
-            //else
-            //    e.Handled = true;
-        }
-
-
-
         private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar)) return;
@@ -417,11 +379,8 @@ namespace _2_laba_oop
                 if (num<=Agency.Count)
                 {
                     richTextBox1.Clear();
-                    richTextBox1.AppendText("Name: " + ((Tourist)agency[num - 1]).Name + "\n");
-                    richTextBox1.AppendText("Surname: " + ((Tourist)agency[num - 1]).Surname + "\n");
-                    richTextBox1.AppendText("Voucher country: " + ((Tourist)agency[num - 1]).Voucher.Country + "\n");
-                    richTextBox1.AppendText("Voucher Day: " + ((Tourist)agency[num - 1]).Voucher.Day + "| Month: " + ((Tourist)agency[num - 1]).Voucher.Month + "\n");
-                    richTextBox1.AppendText("Voucher Duration: " + ((Tourist)agency[num - 1]).Voucher.Duration + "\n\n");
+                    richTextBox1.AppendText("Name: " + ((Tourist1)agency[num - 1]).Name + "\n");
+                    richTextBox1.AppendText("Surname: " + ((Tourist1)agency[num - 1]).Surname + "\n");                    
                 }
                 else
                 {
@@ -429,14 +388,6 @@ namespace _2_laba_oop
                 }
             }
         }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            using (StreamWriter writer = new StreamWriter("info_Tourist.txt", false))
-            {              
-            }
-        }
-
         private void textBox4_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar) || e.KeyChar == ' '|| e.KeyChar == 8) return;
@@ -447,17 +398,13 @@ namespace _2_laba_oop
         private void button9_Click(object sender, EventArgs e)
         {
             Admin Afomr = new Admin();
-
             Afomr.ShowDialog();
         }
          
         private void buttonModify_Click(object sender, EventArgs e)
         {
             Modification mform = new Modification(this);
-
             mform.ShowDialog();
-
-
         }
 
         private void buttonEnter_Click(object sender, EventArgs e)////основний логін
@@ -493,7 +440,6 @@ namespace _2_laba_oop
                             buttonProfile.Text = c.Tourist1.Name;
                             button2.Enabled = true;
                             button3.Enabled = true;
-                            button4.Enabled = true;
                         }
                         return;
                     }
@@ -518,24 +464,27 @@ namespace _2_laba_oop
                     return;
                 }
                 GlobalUser = new User {Login = textBoxLoginRegistration.Text, Password = maskedTextBoxPasswordRegistration1.Text };
-                //using (db = new DataContext())
-                //{
-                //    db.Users.Add(user);
-                //    db.SaveChanges();
-                //}
                 panelRegistration.Visible = false;
                 panelMenu.Visible = true;
-                //UserID = user.Id;
             }
-        }///Тут можливо є сенс поки не добавляти в БД юзера, а добавити його вже тоді, коли буде турист
-        /// Бо єслі я добавив юзера а случайно не добавив туриста, то можуть бути проблеми
-        /// А так можна зробити глобального юзера якого ми потім будемо додавати в БД
+        }
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             Modification mform = new Modification(this);
-
             mform.ShowDialog();
         }
+
+        private void comboBoxCards_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using(db = new DataContext())
+            {
+
+                CreditCard card = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text).Tourist1.
+                    Cards.FirstOrDefault(k=>k.Number==comboBoxCards.GetItemText(comboBoxCards.SelectedItem));
+                label13.Text = card.MoneyCount.ToString();
+            }
+        }
+
     }
 }

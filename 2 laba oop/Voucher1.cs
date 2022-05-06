@@ -14,13 +14,15 @@ namespace _2_laba_oop
 
         public string Destination { get; set; }
 
+        public string FromCity { get; set; }
+
         public int TouristId { get; set; }
 
         public int Price { get; set; }
 
         public bool IsPaid { get; set; }
 
-        public Tourist1 Tourist { get; set; }
+        public virtual Tourist1 Tourist { get; set; }
 
 
         public ICollection<Destination> Destinations { get; set; }

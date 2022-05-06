@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace _2_laba_oop
 {
-    public class Agency: IAgencyInfo
+    public class Agency
     {
    
         public Agency()
         {
-            tourists = new List<Tourist>();
+            tourists = new List<Tourist1>();
         }
         string label;
 
-        public List<Tourist> tourists;
+        public List<Tourist1> tourists;
 
         public string Label
         {
@@ -29,9 +29,9 @@ namespace _2_laba_oop
             }
         }
 
-        public IAgencyInfo this[int index]
+        public Tourist1 this[int index]
         {
-            set { tourists[index] = (Tourist)value; }
+            set { tourists[index] = (Tourist1)value; }
             get { return tourists[index]; }
         }
 
@@ -41,7 +41,7 @@ namespace _2_laba_oop
         public static int Count { get; private set; }
         public int Nationality { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public void Add(Tourist tourist)
+        public void Add(Tourist1 tourist)
         {
             tourists.Add(tourist);
             Count++;

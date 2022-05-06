@@ -24,9 +24,9 @@ namespace _2_laba_oop
                 taken?.Invoke("Initialization info of tourist");
                 form.richTextBox1.AppendText("Name: "+item.Name+"\n");
                 form.richTextBox1.AppendText("Surname: " + item.Surname + "\n");
-                form.richTextBox1.AppendText("Voucher country: " + item.Voucher.Country + "\n");
-                form.richTextBox1.AppendText("Voucher Day: " + item.Voucher.Day + "| Month: " + item.Voucher.Month + "\n");
-                form.richTextBox1.AppendText("Voucher Duration: " + item.Voucher.Duration + "\n\n");
+                //form.richTextBox1.AppendText("Voucher country: " + item.Voucher.Country + "\n");
+                //form.richTextBox1.AppendText("Voucher Day: " + item.Voucher.Day + "| Month: " + item.Voucher.Month + "\n");
+                //form.richTextBox1.AppendText("Voucher Duration: " + item.Voucher.Duration + "\n\n");
             }
         }
 

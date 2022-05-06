@@ -12,7 +12,7 @@ namespace _2_laba_oop
         public CreditCard()
         {
             Random rnd = new Random();
-            MoneyCount = rnd.Next(2500, 4500);
+            MoneyCount = rnd.Next(25000, 45000);
         }
         public int Id { get; set; }
 

@@ -48,6 +48,18 @@ namespace _2_laba_oop
             this.textBoxNewPassword = new System.Windows.Forms.TextBox();
             this.textBoxCurrentPassword = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelCardCVC3 = new System.Windows.Forms.Label();
+            this.labelCardMoney3 = new System.Windows.Forms.Label();
+            this.labelCardNum3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelCardCVC2 = new System.Windows.Forms.Label();
+            this.labelCardMoney2 = new System.Windows.Forms.Label();
+            this.labelCardNum2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelCardCVC1 = new System.Windows.Forms.Label();
+            this.labelCardMoney1 = new System.Windows.Forms.Label();
+            this.labelCardNum1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -64,6 +76,9 @@ namespace _2_laba_oop
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -275,6 +290,9 @@ namespace _2_laba_oop
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Teal;
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Controls.Add(this.panel2);
+            this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Controls.Add(this.pictureBox3);
             this.tabPage3.Controls.Add(this.pictureBox2);
             this.tabPage3.Controls.Add(this.pictureBox1);
@@ -290,6 +308,129 @@ namespace _2_laba_oop
             this.tabPage3.Size = new System.Drawing.Size(619, 446);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Credit Cards";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.labelCardCVC3);
+            this.panel3.Controls.Add(this.labelCardMoney3);
+            this.panel3.Controls.Add(this.labelCardNum3);
+            this.panel3.Location = new System.Drawing.Point(418, 158);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(137, 67);
+            this.panel3.TabIndex = 16;
+            this.panel3.Visible = false;
+            // 
+            // labelCardCVC3
+            // 
+            this.labelCardCVC3.AutoSize = true;
+            this.labelCardCVC3.ForeColor = System.Drawing.Color.White;
+            this.labelCardCVC3.Location = new System.Drawing.Point(19, 27);
+            this.labelCardCVC3.Name = "labelCardCVC3";
+            this.labelCardCVC3.Size = new System.Drawing.Size(38, 15);
+            this.labelCardCVC3.TabIndex = 15;
+            this.labelCardCVC3.Text = "label9";
+            // 
+            // labelCardMoney3
+            // 
+            this.labelCardMoney3.AutoSize = true;
+            this.labelCardMoney3.ForeColor = System.Drawing.Color.White;
+            this.labelCardMoney3.Location = new System.Drawing.Point(19, 42);
+            this.labelCardMoney3.Name = "labelCardMoney3";
+            this.labelCardMoney3.Size = new System.Drawing.Size(38, 15);
+            this.labelCardMoney3.TabIndex = 15;
+            this.labelCardMoney3.Text = "label9";
+            // 
+            // labelCardNum3
+            // 
+            this.labelCardNum3.AutoSize = true;
+            this.labelCardNum3.ForeColor = System.Drawing.Color.White;
+            this.labelCardNum3.Location = new System.Drawing.Point(19, 12);
+            this.labelCardNum3.Name = "labelCardNum3";
+            this.labelCardNum3.Size = new System.Drawing.Size(38, 15);
+            this.labelCardNum3.TabIndex = 15;
+            this.labelCardNum3.Text = "label9";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelCardCVC2);
+            this.panel2.Controls.Add(this.labelCardMoney2);
+            this.panel2.Controls.Add(this.labelCardNum2);
+            this.panel2.Location = new System.Drawing.Point(249, 158);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(137, 67);
+            this.panel2.TabIndex = 16;
+            this.panel2.Visible = false;
+            // 
+            // labelCardCVC2
+            // 
+            this.labelCardCVC2.AutoSize = true;
+            this.labelCardCVC2.ForeColor = System.Drawing.Color.White;
+            this.labelCardCVC2.Location = new System.Drawing.Point(30, 27);
+            this.labelCardCVC2.Name = "labelCardCVC2";
+            this.labelCardCVC2.Size = new System.Drawing.Size(38, 15);
+            this.labelCardCVC2.TabIndex = 15;
+            this.labelCardCVC2.Text = "label9";
+            // 
+            // labelCardMoney2
+            // 
+            this.labelCardMoney2.AutoSize = true;
+            this.labelCardMoney2.ForeColor = System.Drawing.Color.White;
+            this.labelCardMoney2.Location = new System.Drawing.Point(30, 42);
+            this.labelCardMoney2.Name = "labelCardMoney2";
+            this.labelCardMoney2.Size = new System.Drawing.Size(38, 15);
+            this.labelCardMoney2.TabIndex = 15;
+            this.labelCardMoney2.Text = "label9";
+            // 
+            // labelCardNum2
+            // 
+            this.labelCardNum2.AutoSize = true;
+            this.labelCardNum2.ForeColor = System.Drawing.Color.White;
+            this.labelCardNum2.Location = new System.Drawing.Point(30, 12);
+            this.labelCardNum2.Name = "labelCardNum2";
+            this.labelCardNum2.Size = new System.Drawing.Size(38, 15);
+            this.labelCardNum2.TabIndex = 15;
+            this.labelCardNum2.Text = "label9";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelCardCVC1);
+            this.panel1.Controls.Add(this.labelCardMoney1);
+            this.panel1.Controls.Add(this.labelCardNum1);
+            this.panel1.Location = new System.Drawing.Point(77, 158);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(137, 67);
+            this.panel1.TabIndex = 16;
+            this.panel1.Visible = false;
+            // 
+            // labelCardCVC1
+            // 
+            this.labelCardCVC1.AutoSize = true;
+            this.labelCardCVC1.ForeColor = System.Drawing.Color.White;
+            this.labelCardCVC1.Location = new System.Drawing.Point(21, 27);
+            this.labelCardCVC1.Name = "labelCardCVC1";
+            this.labelCardCVC1.Size = new System.Drawing.Size(38, 15);
+            this.labelCardCVC1.TabIndex = 15;
+            this.labelCardCVC1.Text = "label9";
+            // 
+            // labelCardMoney1
+            // 
+            this.labelCardMoney1.AutoSize = true;
+            this.labelCardMoney1.ForeColor = System.Drawing.Color.White;
+            this.labelCardMoney1.Location = new System.Drawing.Point(21, 42);
+            this.labelCardMoney1.Name = "labelCardMoney1";
+            this.labelCardMoney1.Size = new System.Drawing.Size(38, 15);
+            this.labelCardMoney1.TabIndex = 15;
+            this.labelCardMoney1.Text = "label9";
+            // 
+            // labelCardNum1
+            // 
+            this.labelCardNum1.AutoSize = true;
+            this.labelCardNum1.ForeColor = System.Drawing.Color.White;
+            this.labelCardNum1.Location = new System.Drawing.Point(21, 12);
+            this.labelCardNum1.Name = "labelCardNum1";
+            this.labelCardNum1.Size = new System.Drawing.Size(38, 15);
+            this.labelCardNum1.TabIndex = 15;
+            this.labelCardNum1.Text = "label9";
             // 
             // pictureBox3
             // 
@@ -328,7 +469,7 @@ namespace _2_laba_oop
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(264, 347);
+            this.button1.Location = new System.Drawing.Point(262, 376);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 43);
             this.button1.TabIndex = 13;
@@ -341,7 +482,7 @@ namespace _2_laba_oop
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(229, 272);
+            this.label7.Location = new System.Drawing.Point(227, 301);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 25);
             this.label7.TabIndex = 12;
@@ -352,7 +493,7 @@ namespace _2_laba_oop
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(165, 216);
+            this.label8.Location = new System.Drawing.Point(163, 245);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 25);
             this.label8.TabIndex = 11;
@@ -360,7 +501,7 @@ namespace _2_laba_oop
             // 
             // textBoxCVC
             // 
-            this.textBoxCVC.Location = new System.Drawing.Point(294, 272);
+            this.textBoxCVC.Location = new System.Drawing.Point(292, 301);
             this.textBoxCVC.MaxLength = 3;
             this.textBoxCVC.Name = "textBoxCVC";
             this.textBoxCVC.Size = new System.Drawing.Size(152, 23);
@@ -368,7 +509,7 @@ namespace _2_laba_oop
             // 
             // textBoxCardNumber
             // 
-            this.textBoxCardNumber.Location = new System.Drawing.Point(294, 216);
+            this.textBoxCardNumber.Location = new System.Drawing.Point(292, 245);
             this.textBoxCardNumber.MaxLength = 19;
             this.textBoxCardNumber.Name = "textBoxCardNumber";
             this.textBoxCardNumber.Size = new System.Drawing.Size(152, 23);
@@ -448,6 +589,12 @@ namespace _2_laba_oop
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -487,5 +634,17 @@ namespace _2_laba_oop
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelCardMoney1;
+        private System.Windows.Forms.Label labelCardCVC1;
+        private System.Windows.Forms.Label labelCardNum1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelCardCVC3;
+        private System.Windows.Forms.Label labelCardMoney3;
+        private System.Windows.Forms.Label labelCardNum3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label labelCardCVC2;
+        private System.Windows.Forms.Label labelCardMoney2;
+        private System.Windows.Forms.Label labelCardNum2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
