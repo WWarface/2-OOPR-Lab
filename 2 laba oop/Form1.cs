@@ -486,5 +486,10 @@ namespace _2_laba_oop
             }
         }
 
+        private void button5laba_Click(object sender, EventArgs e)
+        {
+            Form5Lab form = new Form5Lab();
+            form.Show();
+        }
     }
 }

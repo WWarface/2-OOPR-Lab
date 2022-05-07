@@ -16,6 +16,8 @@ namespace _2_laba_oop
         }
         public int Id { get; set; }
 
+        public string type { get; set; }
+
         public string Number { get; set; }
         public int CVC { get; set; }
         public double MoneyCount { get; set; }

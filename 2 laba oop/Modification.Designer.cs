@@ -72,6 +72,8 @@ namespace _2_laba_oop
             this.labelSurname = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.textBoxTypeCard = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -298,8 +300,10 @@ namespace _2_laba_oop
             this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.textBoxCVC);
+            this.tabPage3.Controls.Add(this.textBoxTypeCard);
             this.tabPage3.Controls.Add(this.textBoxCardNumber);
             this.tabPage3.ForeColor = System.Drawing.Color.Black;
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
@@ -469,7 +473,7 @@ namespace _2_laba_oop
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(262, 376);
+            this.button1.Location = new System.Drawing.Point(264, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 43);
             this.button1.TabIndex = 13;
@@ -482,7 +486,7 @@ namespace _2_laba_oop
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(227, 301);
+            this.label7.Location = new System.Drawing.Point(226, 342);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 25);
             this.label7.TabIndex = 12;
@@ -493,7 +497,7 @@ namespace _2_laba_oop
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(163, 245);
+            this.label8.Location = new System.Drawing.Point(162, 286);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 25);
             this.label8.TabIndex = 11;
@@ -501,7 +505,7 @@ namespace _2_laba_oop
             // 
             // textBoxCVC
             // 
-            this.textBoxCVC.Location = new System.Drawing.Point(292, 301);
+            this.textBoxCVC.Location = new System.Drawing.Point(291, 342);
             this.textBoxCVC.MaxLength = 3;
             this.textBoxCVC.Name = "textBoxCVC";
             this.textBoxCVC.Size = new System.Drawing.Size(152, 23);
@@ -509,7 +513,7 @@ namespace _2_laba_oop
             // 
             // textBoxCardNumber
             // 
-            this.textBoxCardNumber.Location = new System.Drawing.Point(292, 245);
+            this.textBoxCardNumber.Location = new System.Drawing.Point(291, 286);
             this.textBoxCardNumber.MaxLength = 19;
             this.textBoxCardNumber.Name = "textBoxCardNumber";
             this.textBoxCardNumber.Size = new System.Drawing.Size(152, 23);
@@ -567,6 +571,25 @@ namespace _2_laba_oop
             this.buttonDelete.Text = "Delete account";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // textBoxTypeCard
+            // 
+            this.textBoxTypeCard.Location = new System.Drawing.Point(291, 247);
+            this.textBoxTypeCard.MaxLength = 19;
+            this.textBoxTypeCard.Name = "textBoxTypeCard";
+            this.textBoxTypeCard.Size = new System.Drawing.Size(152, 23);
+            this.textBoxTypeCard.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(234, 247);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 25);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Type";
             // 
             // Modification
             // 
@@ -646,5 +669,7 @@ namespace _2_laba_oop
         private System.Windows.Forms.Label labelCardMoney2;
         private System.Windows.Forms.Label labelCardNum2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxTypeCard;
     }
 }

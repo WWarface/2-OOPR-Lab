@@ -78,10 +78,13 @@ namespace _2_laba_oop
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.labelVoucherPrice = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.button5laba = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -105,8 +108,6 @@ namespace _2_laba_oop
             this.maskedTextBoxPasswordRegistration2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPasswordRegistration1 = new System.Windows.Forms.MaskedTextBox();
             this.textBoxLoginRegistration = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.labelVoucherPrice = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -194,6 +195,7 @@ namespace _2_laba_oop
             // 
             // panelTitle
             // 
+            this.panelTitle.Controls.Add(this.button5laba);
             this.panelTitle.Controls.Add(this.buttonProfile);
             this.panelTitle.Controls.Add(this.buttonClose);
             this.panelTitle.Controls.Add(this.label1);
@@ -755,6 +757,21 @@ namespace _2_laba_oop
             this.label10.Text = "Name";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelVoucherPrice
+            // 
+            this.labelVoucherPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelVoucherPrice.AutoSize = true;
+            this.labelVoucherPrice.BackColor = System.Drawing.Color.Transparent;
+            this.labelVoucherPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelVoucherPrice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelVoucherPrice.Location = new System.Drawing.Point(150, 148);
+            this.labelVoucherPrice.Name = "labelVoucherPrice";
+            this.labelVoucherPrice.Size = new System.Drawing.Size(70, 21);
+            this.labelVoucherPrice.TabIndex = 2;
+            this.labelVoucherPrice.Text = "Balance";
+            this.labelVoucherPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelVoucherPrice.Visible = false;
+            // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -768,6 +785,20 @@ namespace _2_laba_oop
             this.label13.TabIndex = 2;
             this.label13.Text = "Balance";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label26.Location = new System.Drawing.Point(32, 148);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(115, 21);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Voucher price";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -808,10 +839,20 @@ namespace _2_laba_oop
             this.panelInfo.Controls.Add(this.label17);
             this.panelInfo.Controls.Add(this.richTextBox1);
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelInfo.Location = new System.Drawing.Point(145, 0);
+            this.panelInfo.Location = new System.Drawing.Point(145, 80);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(634, 502);
+            this.panelInfo.Size = new System.Drawing.Size(634, 422);
             this.panelInfo.TabIndex = 10;
+            // 
+            // button5laba
+            // 
+            this.button5laba.Location = new System.Drawing.Point(3, 12);
+            this.button5laba.Name = "button5laba";
+            this.button5laba.Size = new System.Drawing.Size(118, 32);
+            this.button5laba.TabIndex = 6;
+            this.button5laba.Text = "button1";
+            this.button5laba.UseVisualStyleBackColor = true;
+            this.button5laba.Click += new System.EventHandler(this.button5laba_Click);
             // 
             // button8
             // 
@@ -867,7 +908,7 @@ namespace _2_laba_oop
             this.label18.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(0, 110);
+            this.label18.Location = new System.Drawing.Point(7, 110);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(224, 30);
             this.label18.TabIndex = 2;
@@ -1051,48 +1092,19 @@ namespace _2_laba_oop
             this.textBoxLoginRegistration.Size = new System.Drawing.Size(100, 23);
             this.textBoxLoginRegistration.TabIndex = 0;
             // 
-            // label26
-            // 
-            this.label26.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label26.Location = new System.Drawing.Point(32, 148);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(115, 21);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Voucher price";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelVoucherPrice
-            // 
-            this.labelVoucherPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelVoucherPrice.AutoSize = true;
-            this.labelVoucherPrice.BackColor = System.Drawing.Color.Transparent;
-            this.labelVoucherPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelVoucherPrice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelVoucherPrice.Location = new System.Drawing.Point(150, 148);
-            this.labelVoucherPrice.Name = "labelVoucherPrice";
-            this.labelVoucherPrice.Size = new System.Drawing.Size(70, 21);
-            this.labelVoucherPrice.TabIndex = 2;
-            this.labelVoucherPrice.Text = "Balance";
-            this.labelVoucherPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelVoucherPrice.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
+            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelPay);
             this.Controls.Add(this.panelPlane);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelRegistration);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelTitle);
-            this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
@@ -1202,6 +1214,7 @@ namespace _2_laba_oop
         private System.Windows.Forms.ComboBox comboBoxCards;
         private System.Windows.Forms.Label labelVoucherPrice;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button button5laba;
     }
 }
 

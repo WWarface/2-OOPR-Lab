@@ -160,6 +160,7 @@ namespace _2_laba_oop
                 CreditCard card = new CreditCard
                 {
                     Number = textBoxCardNumber.Text,
+                    type = textBoxTypeCard.Text,
                     CVC = Int32.Parse(textBoxCVC.Text),
                     TouristId = user.Tourist1.Id
                 };
