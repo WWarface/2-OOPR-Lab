@@ -12,8 +12,7 @@ using System.Data.Entity;
 namespace _2_laba_oop
 {
     public partial class Modification : Form
-    {
-        
+    {       
 
         Form1 form1=null;   
         List<PictureBox> pictures;
@@ -33,7 +32,7 @@ namespace _2_laba_oop
                 Tourist1 sanya = null;
                 using (var db =new DataContext())///////UPDATE
                 {
-                    sanya = db.Tourists.FirstOrDefault(p => p.User.Login==form1.textBoxLogin.Text);
+                    sanya = db.Tourists.FirstOrDefault(p => p.UserNavigation.Login==form1.textBoxLogin.Text);
                     if (textName.Text != "")
                     {
                         sanya.Name = textName.Text;
@@ -60,11 +59,11 @@ namespace _2_laba_oop
         {
             using (var db = new DataContext())///read
             {
-                labelName.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Name.ToString();
-                labelSurname.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Surname.ToString();
-                labelAge.Text = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text).Age.ToString();
+                labelName.Text = db.Tourists.FirstOrDefault(p => p.UserNavigation.Login == form1.textBoxLogin.Text).Name.ToString();
+                labelSurname.Text = db.Tourists.FirstOrDefault(p => p.UserNavigation.Login == form1.textBoxLogin.Text).Surname.ToString();
+                labelAge.Text = db.Tourists.FirstOrDefault(p => p.UserNavigation.Login == form1.textBoxLogin.Text).Age.ToString();
 
-                Tourist1 tourist = db.Tourists.FirstOrDefault(p => p.User.Login == form1.textBoxLogin.Text);
+                Tourist1 tourist = db.Tourists.FirstOrDefault(p => p.UserNavigation.Login == form1.textBoxLogin.Text);
                 List<CreditCard> m = tourist.Cards.ToList();
                 int count = m.Count;
                 if (count > 3) count = 3;
@@ -128,12 +127,12 @@ namespace _2_laba_oop
             }            
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e)//delete
         {
             using(DataContext db=new DataContext())
             {
                 User user=db.Users.FirstOrDefault(p=>p.Login==form1.textBoxLogin.Text);
-                Tourist1 tourist = user.Tourist1;
+                Tourist1 tourist = user.Tourist1Navigation;
                 if (user !=null)
                 {
                     DialogResult result= MessageBox.Show("Delete your account", "Are you sure?",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
@@ -162,7 +161,7 @@ namespace _2_laba_oop
                     Number = textBoxCardNumber.Text,
                     type = textBoxTypeCard.Text,
                     CVC = Int32.Parse(textBoxCVC.Text),
-                    TouristId = user.Tourist1.Id
+                    TouristId = user.Tourist1Navigation.Id
                 };
 
                 if (db.Cards.FirstOrDefault(p=>p.Number==card.Number)==null)///означає, що немає більше такої картки
@@ -171,7 +170,7 @@ namespace _2_laba_oop
                     db.SaveChanges();                    
                 }
 
-                List<CreditCard> m = user.Tourist1.Cards.ToList();
+                List<CreditCard> m = user.Tourist1Navigation.Cards.ToList();
                 int count = m.Count;
                 if (count > 3) count = 3;
 

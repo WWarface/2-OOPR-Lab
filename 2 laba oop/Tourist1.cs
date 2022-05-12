@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace _2_laba_oop
 {
@@ -13,8 +9,8 @@ namespace _2_laba_oop
 
         public Tourist1()
         {
-            Vouchers = new List<Voucher1>();
-            Cards = new List<CreditCard>();
+            Vouchers = new HashSet<Voucher1>();
+            Cards = new HashSet<CreditCard>();
         }
 
         public Tourist1(string name, string surname, int age)
@@ -24,18 +20,15 @@ namespace _2_laba_oop
             Age = age;
         }
 
-        [ForeignKey("User")]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-
-        public virtual ICollection<CreditCard> Cards { get; set; }
-        public virtual ICollection<Voucher1> Vouchers { get; set; }//navigation prop
         public int Age { get; set; }
 
+        [Required]
+        public virtual User UserNavigation { get; set; }
+        public virtual ICollection<CreditCard> Cards { get; set; }
+        public virtual ICollection<Voucher1> Vouchers { get; set; }
 
-        public virtual User User { get; set; }//navigation prop
-
-        //public Voucher Voucher { get; set; }////navigation prop
     }
 }

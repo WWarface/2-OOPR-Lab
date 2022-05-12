@@ -85,7 +85,7 @@ namespace _2_laba_oop
                     Surname = textBox2.Text,
                     Age = Int32.Parse(textBox3.Text),
                     Id = GlobalUser.Id,
-                    User = GlobalUser
+                    UserNavigation = GlobalUser
                 };
                 using (db = new DataContext())//Добавити туриста за айдішніком його акаунта
                 {
@@ -236,7 +236,7 @@ namespace _2_laba_oop
                         Price = info.Price,
                         Destination = CurrentDestination,
                         FromCity = CurrentFromCity,
-                        TouristId = user.Tourist1.Id,
+                        TouristId = user.Tourist1Navigation.Id,
                         IsPaid = false
                     };
                     if (db.Vouchers.FirstOrDefault(p=>p.Destination==CurrentDestination&&p.FromCity==CurrentFromCity)==null)//добавляємо тільки 1 путівку
@@ -244,7 +244,7 @@ namespace _2_laba_oop
                         db.Vouchers.Add(voucher1);
                         db.SaveChanges();
                     }                    
-                    ICollection<CreditCard> cards = user.Tourist1.Cards;
+                    ICollection<CreditCard> cards = user.Tourist1Navigation.Cards;
                     if (cards.Count!=0)
                     {
                         foreach (var item in cards)
@@ -316,7 +316,7 @@ namespace _2_laba_oop
                     db.SaveChanges();
                     label13.Text = card.MoneyCount.ToString();// В залежності від вибраного комбобоксу, показувати к-ть грошей в 13лейбл
                     agency = new Agency();
-                    Tourist1 tourist = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text).Tourist1;
+                    Tourist1 tourist = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text).Tourist1Navigation;
                     agency.Add(tourist);
                 }
             }
@@ -425,7 +425,7 @@ namespace _2_laba_oop
                     }            
                     if (c != null&&maskedTextBoxPassword.Text == c.Password)
                     {
-                        if (c.Tourist1 != null)
+                        if (c.Tourist1Navigation != null)
                         {
                             foreach (var item in this.Controls)
                             {
@@ -437,7 +437,7 @@ namespace _2_laba_oop
                             panelTitle.Visible = true;/////Це дві панелі управління(верхня і ліва)
                             panel1.Visible = true;
                             buttonProfile.Visible = true;
-                            buttonProfile.Text = c.Tourist1.Name;
+                            buttonProfile.Text = c.Tourist1Navigation.Name;
                             button2.Enabled = true;
                             button3.Enabled = true;
                         }
@@ -480,7 +480,7 @@ namespace _2_laba_oop
             using(db = new DataContext())
             {
 
-                CreditCard card = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text).Tourist1.
+                CreditCard card = db.Users.FirstOrDefault(p => p.Login == textBoxLogin.Text).Tourist1Navigation.
                     Cards.FirstOrDefault(k=>k.Number==comboBoxCards.GetItemText(comboBoxCards.SelectedItem));
                 label13.Text = card.MoneyCount.ToString();
             }

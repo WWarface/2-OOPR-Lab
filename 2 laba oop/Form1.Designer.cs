@@ -36,6 +36,7 @@ namespace _2_laba_oop
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.button5laba = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@ namespace _2_laba_oop
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.button5laba = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -204,6 +204,16 @@ namespace _2_laba_oop
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(634, 80);
             this.panelTitle.TabIndex = 2;
+            // 
+            // button5laba
+            // 
+            this.button5laba.Location = new System.Drawing.Point(3, 12);
+            this.button5laba.Name = "button5laba";
+            this.button5laba.Size = new System.Drawing.Size(118, 32);
+            this.button5laba.TabIndex = 6;
+            this.button5laba.Text = "button1";
+            this.button5laba.UseVisualStyleBackColor = true;
+            this.button5laba.Click += new System.EventHandler(this.button5laba_Click);
             // 
             // buttonProfile
             // 
@@ -844,16 +854,6 @@ namespace _2_laba_oop
             this.panelInfo.Size = new System.Drawing.Size(634, 422);
             this.panelInfo.TabIndex = 10;
             // 
-            // button5laba
-            // 
-            this.button5laba.Location = new System.Drawing.Point(3, 12);
-            this.button5laba.Name = "button5laba";
-            this.button5laba.Size = new System.Drawing.Size(118, 32);
-            this.button5laba.TabIndex = 6;
-            this.button5laba.Text = "button1";
-            this.button5laba.UseVisualStyleBackColor = true;
-            this.button5laba.Click += new System.EventHandler(this.button5laba_Click);
-            // 
             // button8
             // 
             this.button8.FlatAppearance.BorderSize = 0;
@@ -945,9 +945,9 @@ namespace _2_laba_oop
             this.panelLogin.Controls.Add(this.maskedTextBoxPassword);
             this.panelLogin.Controls.Add(this.textBoxLogin);
             this.panelLogin.Controls.Add(this.labelRegister);
-            this.panelLogin.Location = new System.Drawing.Point(170, 80);
+            this.panelLogin.Location = new System.Drawing.Point(145, 80);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(608, 421);
+            this.panelLogin.Size = new System.Drawing.Size(633, 421);
             this.panelLogin.TabIndex = 5;
             // 
             // linkLabel1
@@ -1098,10 +1098,10 @@ namespace _2_laba_oop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(779, 502);
+            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelPay);
             this.Controls.Add(this.panelPlane);
-            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelRegistration);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelTitle);

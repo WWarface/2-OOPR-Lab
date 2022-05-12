@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -226,7 +225,7 @@ namespace _2_laba_oop
             }
         }
 
-        private void buttonCount_Click(object sender, EventArgs e)///REWOKERD HARDCODE!
+        private void buttonCount_Click(object sender, EventArgs e)///REWORK HARDCODE!
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
@@ -235,12 +234,11 @@ namespace _2_laba_oop
             int rowNumber = dataGridView1.Rows.Add();
             using (DataContext db = new DataContext())
             {
-                dataGridView1.Rows[0].Cells[0].Value = db.Cards.FirstOrDefault(p=>p.type=="MasterCard").type;
+                dataGridView1.Rows[0].Cells[0].Value = db.Cards.FirstOrDefault(p=>p.type=="MasterCard")?.type;
                 dataGridView1.Rows[0].Cells[1].Value = db.Cards.Count(p=>p.type=="MasterCard");
                 dataGridView1.Rows.Add();
-                dataGridView1.Rows[1].Cells[0].Value = db.Cards.FirstOrDefault(p => p.type == "Visa").type;
+                dataGridView1.Rows[1].Cells[0].Value = db.Cards.FirstOrDefault(p => p.type == "Visa")?.type;
                 dataGridView1.Rows[1].Cells[1].Value = db.Cards.Count(p => p.type == "Visa");
-                // HARDCODE
             }
         }
     }

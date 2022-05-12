@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _2_laba_oop
 {
-    class DataContext :DbContext
+    public class DataContext :DbContext
     {
         public DataContext()
             : base("DefaultConnection")
@@ -19,5 +19,13 @@ namespace _2_laba_oop
         public DbSet<User> Users { get; set; }
 
         public DbSet<CreditCard> Cards { get; set; }
+
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<User>().ToTable("User");
+        //    modelBuilder.Entity<User>().HasOne()
+        //    base.OnModelCreating(modelBuilder); 
+
+        //}
     }
 }

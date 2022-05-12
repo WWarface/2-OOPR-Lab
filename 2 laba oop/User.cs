@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace _2_laba_oop
 {
@@ -17,6 +11,6 @@ namespace _2_laba_oop
 
         public string Password { get; set; }
 
-        public virtual Tourist1 Tourist1 { get; set; }
+        public virtual Tourist1 Tourist1Navigation { get; set; }
     }
 }
