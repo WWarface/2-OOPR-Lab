@@ -25,6 +25,7 @@ namespace _2_laba_oop
         }
         public static int Count { get; set; }
 
+        public int number { get; set; }
         public int Id { get; set; }
 
         public int Nationality { get; set; }
